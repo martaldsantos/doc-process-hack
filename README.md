@@ -1,6 +1,6 @@
 ![1](https://github.com/user-attachments/assets/55d2f2fa-25fa-42e4-b936-a08eb051e716)
 
-# Hackathon: Doc Processing
+# Intelligent Document Processing using Azure AI
 
 Welcome to the Activate GenAI Hackathon! Today, you're set to dive into the transformative world of AI, with a focus on utilizing the power of Azure OpenAI services. Prepare yourself for a day of intense learning, innovation, and hands-on experience that will elevate your understanding of AI integration in application development.
 
