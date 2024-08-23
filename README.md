@@ -19,6 +19,7 @@ By participating in this hackathon, you will learn how to:
 -	Enhance your problem-solving skills by addressing real-world scenarios with AI-driven solutions.
 -	Collaborate with other participants to tackle challenges and share insights.
 
+## Requirements
 
 ## Hackathon Format: Challenge-Based
 This hackathon adopts a challenge-based format, offering you a unique opportunity to learn while dealing with practical problems. Each challenge includes one or more self-contained tasks designed to test and enhance your skills in specific aspects of AI app development. You will approach these challenges by:
