@@ -30,6 +30,14 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 
 
 ## Challenges
+1. Challenge 01: **[Resources Deployment](Challenge1/readme.md)**
+   - Create your Azure AI hub and AI Project to start working on your solution
+2. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
+   - Create your Azure AI hub and AI Project to start working on your solution
+1. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
+   - Create your Azure AI hub and AI Project to start working on your solution
+1. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
+   - Create your Azure AI hub and AI Project to start working on your solution
 1. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
    - Create your Azure AI hub and AI Project to start working on your solution
   
