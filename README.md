@@ -31,14 +31,14 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 
 ## Challenges
 1. Challenge 01: **[Resources Deployment](Challenge1/readme.md)**
+   - Creation of the Services necessary to conduct this Hack
+2. Challenge 02: **[Implement Document Field Extraction](Challenge2/readme.md)**
    - Create your Azure AI hub and AI Project to start working on your solution
-2. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
+1. Challenge 03: **[Make your documents searchable](Challenge3/readme.md)**
    - Create your Azure AI hub and AI Project to start working on your solution
-1. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
+1. Challenge 04: **[Create your AI-Powered Assitant](Challenge4/readme.md)**
    - Create your Azure AI hub and AI Project to start working on your solution
-1. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
-   - Create your Azure AI hub and AI Project to start working on your solution
-1. Challenge 02: **[Creation of the Project in Azure AI Studio](Challenge%201/readme.md)**
+1. Challenge 05: **[Deploy an AI-Powered Chat App](Challenge5/readme.md)**
    - Create your Azure AI hub and AI Project to start working on your solution
   
 
