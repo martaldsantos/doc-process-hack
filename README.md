@@ -13,11 +13,11 @@ Your quest is to innovate for the future at the fictitious enterprise, GenTech I
 ## Learning Objectives
 
 By participating in this hackathon, you will learn how to:
--	Gain practical experience in deploying and managing Azure OpenAI services, including Large Language Models (LLMs).
--	Develop competencies in implementing intelligent document search capabilities using Azure AI.
--	Acquire the ability to set up and deploy a conversational AI interface with a sample chat application.
--	Enhance your problem-solving skills by addressing real-world scenarios with AI-driven solutions.
--	Collaborate with other participants to tackle challenges and share insights.
+- Gain practical experience in the several components inside Azure that tackle this challenge.
+- Develop competencies in processing documents using Azure Document Intelligence.
+- Acquire the ability to retrieve and structure information from documents in JSON format.
+- Enhance your problem-solving skills by organizing extracted data into tables and text.
+- Collaborate with other participants to tackle challenges and share insights.
 
 ## Requirements
 
@@ -33,15 +33,18 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 1. Challenge 01: **[Resources Deployment](Challenge1/readme.md)**
    - Creation of the Services necessary to conduct this Hack
 2. Challenge 02: **[Implement Document Field Extraction](Challenge2/readme.md)**
-   - Create your Azure AI hub and AI Project to start working on your solution
-1. Challenge 03: **[Make your documents searchable](Challenge3/readme.md)**
-   - Create your Azure AI hub and AI Project to start working on your solution
-1. Challenge 04: **[Create your AI-Powered Assitant](Challenge4/readme.md)**
-   - Create your Azure AI hub and AI Project to start working on your solution
-1. Challenge 05: **[Deploy an AI-Powered Chat App](Challenge5/readme.md)**
-   - Create your Azure AI hub and AI Project to start working on your solution
+   - Upload Data to Storage Account
+   - Use Azure Document Intelligence Model to retrieve information from docs
+3. Challenge 03: **[Make your documents searchable](Challenge3/readme.md)**
+   - Structuring data retrieved 
+   - Create AI Search index to search your data
+4. Challenge 04: **[Data Uploading on Cosmos DB](Challenge4/readme.md)**
+   - Add your structured data to your Cosmos DB 
+5. Challenge 05: **[Automating Document Processing](Challenge5/readme.md)**
+   - Creation of Function App to automate processing
   
 
 
 Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! If you have any questions, don't hesitate to reach out to your coach.
-Happy hacking! Feel free to explore the challenges, learn, and have fun during this hackathon! If you have any questions, don't hesitate to reach out to your coach.
+Feel free to explore the challenges, learn, and have fun during this hackathon! If you have any questions, don't hesitate to reach out to your coach.
+Happy hacking! 
