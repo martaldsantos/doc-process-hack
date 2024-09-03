@@ -21,6 +21,17 @@ By participating in this hackathon, you will learn how to:
 
 ## Requirements
 
+To successfully complete this hackathon, you will need the following:
+
+1. **Azure Account**: An active Azure subscription to access Azure Blob Storage and Azure Document Intelligence services.
+2. **Azure Storage Account**: A storage account with a container to store the documents.
+3. **Azure Document Intelligence Endpoint and Key**: Access to Azure Document Intelligence with the necessary endpoint and key for authentication.
+4. **Python Environment**: A working Python environment with the following packages installed:
+   - `azure-storage-blob`
+   - `azure-ai-documentintelligence`
+5. **Internet Connection**: A stable internet connection to interact with Azure services.
+6. **Basic Python Knowledge**: Familiarity with Python programming, including handling JSON data and making API calls.
+
 ## Hackathon Format: Challenge-Based
 This hackathon adopts a challenge-based format, offering you a unique opportunity to learn while dealing with practical problems. Each challenge includes one or more self-contained tasks designed to test and enhance your skills in specific aspects of AI app development. You will approach these challenges by:
 - Analyzing the problem statement.
