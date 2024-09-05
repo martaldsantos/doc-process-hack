@@ -3,21 +3,29 @@
 
 # Intelligent Document Processing using Azure AI
 
-Welcome to the Activate GenAI Hackathon! Today, you're set to dive into the transformative world of AI, with a focus on utilizing the power of Azure OpenAI services. Prepare yourself for a day of intense learning, innovation, and hands-on experience that will elevate your understanding of AI integration in application development.
+Welcome to the Intelligent Document Processing using Azure AI Hackathon! Today, you're set to dive into the transformative world of AI, with a focus on utilizing the power of the Azure AI Platform. Prepare yourself for a day of intense learning, innovation, and hands-on experience that will elevate your understanding of AI integration in application development.
 
 
-Introduction
-Your quest is to innovate for the future at the fictitious enterprise, GenTech Inc. Your challenge? To integrate next-generation AI capabilities into GenTech's ecosystem, enhancing their operations and customer engagement through intelligent application development
+## Introduction
+As participants, you will delve into innovative solutions that leverage AI to streamline workflows, reduce human error, and expedite the handling of critical documents. By integrating advanced vision technologies, you will create applications that not only improve operational efficiency but also elevate the overall customer experience at Contoso Bank. 
+
+Prepare to unleash your creativity and technical skills as you embark on this exciting journey to shape the future of banking!
+
 
 
 ## Learning Objectives
 
 By participating in this hackathon, you will learn how to:
-- Gain practical experience in the several components inside Azure that tackle this challenge.
-- Develop competencies in processing documents using Azure Document Intelligence.
-- Acquire the ability to retrieve and structure information from documents in JSON format.
-- Enhance your problem-solving skills by organizing extracted data into tables and text.
-- Collaborate with other participants to tackle challenges and share insights.
+
+- Gain Practical Experience with Azure Technologies: Explore various Azure components, including Azure Cognitive Services and Azure Functions, to understand how they can be leveraged for document automation.
+- Develop Competencies in Document Processing: Learn to utilize Azure Document Intelligence to analyze and extract data from various document formats effectively.
+- Master Information Structuring: Acquire skills in transforming raw data extracted from documents into structured JSON format, making it easier to manipulate and utilize in applications.
+- Enhance Data Organization Skills: Improve your problem-solving abilities by effectively organizing and presenting extracted data in tables and text formats, ensuring clarity and usability.
+- Collaborate and Innovate: Work closely with fellow participants to brainstorm solutions, tackle challenges collectively, and share insights that foster a collaborative learning environment.
+- Implement Vision Technologies: Dive into the integration of computer vision techniques to enhance document processing workflows, gaining hands-on experience in real-world applications.
+- Understand Compliance and Security: Learn about the importance of data privacy and compliance in the financial sector while implementing automation solutions.
+- Develop Prototype Applications: Apply your knowledge to create functional prototypes that demonstrate the capabilities of your automated document processing solutions.
+- Receive Feedback and Iterate: Engage in constructive feedback sessions to refine your ideas and improve your solutions based on peer insights and expert guidance.
 
 ## Requirements
 
@@ -44,15 +52,13 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 1. Challenge 01: **[Resources Deployment](Challenge1/readme.md)**
    - Creation of the Services necessary to conduct this Hack
 2. Challenge 02: **[Implement Document Field Extraction](Challenge2/readme.md)**
-   - Upload Data to Storage Account
-   - Use Azure Document Intelligence Model to retrieve information from docs
+   - Use Azure Document Intelligence Model to retrieve information from Text and Tables
 3. Challenge 03: **[Make your documents searchable](Challenge3/readme.md)**
-   - Structuring data retrieved 
-   - Create AI Search index to search your data
+   - Structuring the Retrieved Data and Upload it to a Cosmos DB
 4. Challenge 04: **[Data Uploading on Cosmos DB](Challenge4/readme.md)**
-   - Add your structured data to your Cosmos DB 
+   - Creation of a Function App that will Automate these Processes
 5. Challenge 05: **[Automating Document Processing](Challenge5/readme.md)**
-   - Creation of Function App to automate processing
+   - Text and Table indexing and using with AOAI to ask questions to our DB
   
 
 
