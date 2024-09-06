@@ -51,7 +51,7 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
    - Creation of the Services necessary to conduct this Hack
 2. Challenge 02: **[InsightExtractor: Leveraging Azure Document Intelligence for Data Retrieval](Challenge2/readme.md)**
    - Use Azure Document Intelligence Model to retrieve information from Text and Tables
-3. Challenge 03: **[Data Architecturing: From Retrieval to Upload](Challenge3/readme.md)**
+3. Challenge 03: **[Data Modelling: From Retrieval to Upload](Challenge3/readme.md)**
    - Structuring the Retrieved Data and Upload it to a Cosmos DB
 4. Challenge 04: **[AutoFlow: Streamlining Processes with Azure Functions](Challenge4/readme.md)**
    - Creation of a Function App that will Automate these Processes
