@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-resourceGroupName="rgweaihack"
+resourceGroupName="rgweaihack9"
 location="swedencentral"  # You can change the region
 cosmosAccountName="cosmosweaihack$(openssl rand -hex 3)"
 storageAccountName="storageweaihack$(openssl rand -hex 3)"
@@ -45,25 +45,26 @@ az search service create --name $searchServiceName --resource-group $resourceGro
 
 # Fetch Keys and Endpoint Details
 storageKey=$(az storage account keys list --resource-group $resourceGroupName --account-name $storageAccountName --query "[0].value" -o tsv)
+storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName --name $storageAccountName --query "connectionString" -o tsv)
 cosmosKey=$(az cosmosdb keys list --resource-group $resourceGroupName --name $cosmosAccountName --type keys --query "primaryMasterKey" -o tsv)
 docAIKey=$(az cognitiveservices account keys list --name $docAIName --resource-group $resourceGroupName --query "key1" -o tsv)
-docAIEndpoint=$(az cognitiveservices account show --name $docAIName --resource-group $resourceGroupName --query "endpoint" -o tsv)
+docAIEndpoint=$(az cognitiveservices account show --name $docAIName --resource-group $resourceGroupName --query "properties.endpoint" -o tsv)
 openAIKey=$(az cognitiveservices account keys list --name $openAIName --resource-group $resourceGroupName --query "key1" -o tsv)
-openAIEndpoint=$(az cognitiveservices account show --name $openAIName --resource-group $resourceGroupName --query "endpoint" -o tsv)
+openAIEndpoint=$(az cognitiveservices account show --name $openAIName --resource-group $resourceGroupName --query "properties.endpoint" -o tsv)
 searchAdminKey=$(az search admin-key show --resource-group $resourceGroupName --service-name $searchServiceName --query "primaryKey" -o tsv)
 
-# Set up environment variables in .env file
-echo "STORAGE_ACCOUNT_NAME=$storageAccountName" >> .env
-echo "STORAGE_KEY=$storageKey" >> .env
-echo "STORAGE_CONNECTION_STRING=$storageConnectionString" >> .env
-echo "COSMOS_ACCOUNT_NAME=$cosmosAccountName" >> .env
-echo "COSMOS_KEY=$cosmosKey" >> .env
-echo "DOC_AI_ENDPOINT=$docAIEndpoint" >> .env
-echo "DOC_AI_KEY=$docAIKey" >> .env
-echo "OPENAI_ENDPOINT=$openAIEndpoint" >> .env
-echo "OPENAI_KEY=$openAIKey" >> .env
-echo "SEARCH_SERVICE_NAME=$searchServiceName" >> .env
-echo "SEARCH_ADMIN_KEY=$searchAdminKey" >> .env
+# Set up environment variables in .env file with quotation marks
+echo "STORAGE_ACCOUNT_NAME=\"$storageAccountName\"" >> .env
+echo "STORAGE_KEY=\"$storageKey\"" >> .env
+echo "STORAGE_CONNECTION_STRING=\"$storageConnectionString\"" >> .env
+echo "COSMOS_ACCOUNT_NAME=\"$cosmosAccountName\"" >> .env
+echo "COSMOS_KEY=\"$cosmosKey\"" >> .env
+echo "DOC_AI_ENDPOINT=\"$docAIEndpoint\"" >> .env
+echo "DOC_AI_KEY=\"$docAIKey\"" >> .env
+echo "OPENAI_ENDPOINT=\"$openAIEndpoint\"" >> .env
+echo "OPENAI_KEY=\"$openAIKey\"" >> .env
+echo "SEARCH_SERVICE_NAME=\"$searchServiceName\"" >> .env
+echo "SEARCH_ADMIN_KEY=\"$searchAdminKey\"" >> .env
 
 
 echo "Provisioning complete!"
