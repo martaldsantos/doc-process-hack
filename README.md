@@ -66,7 +66,5 @@ Happy hacking!
 
 
 ## Contributors
-
-André Vala
-Fábio Lopes
-Marta Santos
+- André Vala
+- Marta Santos
