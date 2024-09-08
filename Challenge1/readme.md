@@ -14,12 +14,6 @@
     code .
     ```
 
-1. Install the [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) for your device OS
-
-1. Install the [Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) in VSCode
-
-1. Install the [Azure Functions Core Tools](https://learn.microsoft.com/en-gb/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp) in VSCode
-
 1. Create a new local Python environment using **either** [anaconda](https://www.anaconda.com/products/individual) **or** [venv](https://docs.python.org/3/library/venv.html) for a managed environment.
 
     1. **Option 1**: Using anaconda

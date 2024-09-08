@@ -17,29 +17,39 @@ Prepare to unleash your creativity and technical skills as you embark on this ex
 
 By participating in this hackathon, you will learn how to:
 
-- **Gain Practical Experience with Azure Technologies**: Explore various Azure components, including Azure Cognitive Services and Azure Functions, to understand how they can be leveraged for document automation.
-- **Develop Competencies in Document Processing**: Learn to utilize Azure Document Intelligence to analyze and extract data from various document formats effectively.
-- **Master Information Structuring:** Acquire skills in transforming raw data extracted from documents into structured JSON format, making it easier to manipulate and utilize in applications.
-- **Implement Vision Technologies:** Dive into the integration of computer vision techniques to enhance document processing workflows, gaining hands-on experience in real-world applications.
-- **Understand Compliance and Security:** Learn about the importance of data privacy and compliance in the financial sector while implementing automation solutions.
-- **Develop Prototype Applications:** Apply your knowledge to create functional prototypes that demonstrate the capabilities of your automated document processing solutions.
-- **Receive Feedback and Iterate:** Engage in constructive feedback sessions to refine your ideas and improve your solutions based on peer insights and expert guidance.
+- Gain Practical Experience with Azure Technologies
+- Develop Competencies in Document Processing
+- Understand the complecity behind typical Information Structuring
+- Develop Prototype Applications
+- Receive Feedback and Iterate
 
 ## Requirements
 
 To successfully complete this hackathon, you will need the following:
 
-1. **Azure Account**: An active Azure subscription to access Azure Blob Storage and Azure Document Intelligence services.
-2. **Azure Storage Account**: A storage account with a container to store the documents.
-3. **Azure Document Intelligence Endpoint and Key**: Access to Azure Document Intelligence with the necessary endpoint and key for authentication.
-4. **Python Environment**: A working Python environment with the following packages installed:
-   - `azure-storage-blob`
-   - `azure-ai-documentintelligence`
-5. **Internet Connection**: A stable internet connection to interact with Azure services.
-6. **Basic Python Knowledge**: Familiarity with Python programming, including handling JSON data and making API calls.
+1. An active **Azure subscription**
+
+2. Install [Visual Studio Code](https://code.visualstudio.com/download)
+
+3. Install the [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) for your device OS
+
+4. Install the [Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) in VSCode
+
+5. Install the [Azure Functions Core Tools](https://learn.microsoft.com/en-gb/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp) in VSCode
+
+6. Familiarity with Python programming, including handling JSON data and making API calls.
+
+7. Ability to provision the following resources: 
+- Azure AI Search
+- Azure Cosmos DB
+- Azure Document Intelligence
+- Azure OpenAI Service
+- Azure Storage Account
+
+In order for this provision to happen, you should be either the **Owner or Contributor in an Azure Subscription**. 
 
 ## Hackathon Format: Challenge-Based
-This hackathon adopts a challenge-based format, offering you a unique opportunity to learn while dealing with practical problems. Each challenge includes one or more self-contained tasks designed to test and enhance your skills in specific aspects of AI app development. You will approach these challenges by:
+This hackathon adopts a challenge-based format, offering you a unique opportunity to learn while dealing with practical problems. Each challenge includes one or more self-contained tasks designed to test and enhance your skills in specific aspects of an AI app development. You will approach these challenges by:
 - Analyzing the problem statement.
 - Strategizing your approach to find the most effective solution.
 - Leveraging the provided lab environment and Azure AI services.
@@ -49,9 +59,9 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 ## Challenges
 1. Challenge 01: **[Hack Essentials: Crafting Services for Seamless Execution](Challenge1/readme.md)**
    - Creation of the Services necessary to conduct this Hack
-2. Challenge 02: **[InsightExtractor: Leveraging Azure Document Intelligence for Data Retrieval](Challenge2/readme.md)**
+2. Challenge 02: **[InsightExtractor: Leveraging Azure Document Intelligence for Data Retrieval](Challenge2/doc-processing.ipynb)**
    - Use Azure Document Intelligence Model to retrieve information from Text and Tables
-3. Challenge 03: **[Data Modelling: From Retrieval to Upload](Challenge3/readme.md)**
+3. Challenge 03: **[Data Modelling: From Retrieval to Upload](Challenge3/data_modelling.ipynb)**
    - Structuring the Retrieved Data and Upload it to a Cosmos DB
 4. Challenge 04: **[AutoFlow: Streamlining Processes with Azure Functions](Challenge4/readme.md)**
    - Creation of a Function App that will Automate these Processes
