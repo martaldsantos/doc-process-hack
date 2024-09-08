@@ -60,41 +60,29 @@ If you get an error of permissions, please firstly run the following code:
   ```bash
 chmod u+r+x provision.sh
   ```
+
+ This run should take a couple of minutes. 
+  
 The script should **set up a dedicated resource group** with the following resources:
 
- - **Azure AI services** resource
- - **Azure Machine Learning workspace** (Azure AI Project) resource
- - **Search service** (Azure AI Search) resource
+ - **Azure Open AI service** resource
+ - **Azure Document Intelligence workspace** resource
+ - **Azure AI Search service**  resource
  - **Azure Cosmos DB account** resource
+ - **Azure Storage Account**  resource
 
-The script will set up an **Azure AI Studio** project with the following model deployments created by default, in a relevant region that supports them. _Your Azure subscription must be [enabled for Azure OpenAI access](https://learn.microsoft.com/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai)_.
- - gpt-3.5-turbo
- - text-embeddings-ada-002
- - gpt-4
 
-The Azure AI Search resource will have **Semantic Ranker** enabled for this project, which requires the use of a paid tier of that service. It may also be created in a different region, based on availability of that feature.
+### 4.3 Verify your resources
 
-### 4.3 Verify `config.json` setup
+Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 5 resources and look like this:
 
-The script should automatically create a `config.json` in your root directory, with the relevant Azure subscription, resource group, and AI workspace properties defined. _These will be made use of by the Azure AI SDK for relevant API interactions with the Azure AI platform later_.
+![alt text](image.png)
 
-If the config.json file is not created, simply download it from your Azure portal by visiting the _Azure AI project_ resource created, and looking at its Overview page.
+
 
 ### 4.4 Verify `.env` setup
 
 The default sample has an `.env.sample` file that shows the relevant environment variables that need to be configured in this project. The script should create a `.env` file that has these same variables _but populated with the right values_ for your Azure resources.
 
-If the file is not created, simply copy over `.env.sample` to `.env` - then populate those values manually from the respective Azure resource pages using the Azure Portal (for Azure CosmosDB and Azure AI Search) and the Azure AI Studio (for the Azure OpenAI values)
+If the file is not created, simply copy over `.env.sample` to `.env` - then populate those values manually from the respective Azure resource pages using the Azure Portal.
 
-### 4.5 Verify local connections for Prompt Flow
-
-You will need to have your local Prompt Flow extension configured to have the following _connection_ objects set up:
- - `contoso-cosmos` to Azure Cosmos DB endpoint
- - `contoso-search` to Azure AI Search endpoint
- - `aoai-connection` to Azure OpenAI endpoint
-
-Verify if these were created by using the [pf tool](https://microsoft.github.io/promptflow/reference/pf-command-reference.html#pf-connection) from the VS Code terminal as follows:
-
-```bash
-pf connection list
-```

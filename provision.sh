@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-resourceGroupName="rgweaihack9"
+resourceGroupName="rgweaihack"
 location="swedencentral"  # You can change the region
 cosmosAccountName="cosmosweaihack$(openssl rand -hex 3)"
 storageAccountName="storageweaihack$(openssl rand -hex 3)"
