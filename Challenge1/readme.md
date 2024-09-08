@@ -32,12 +32,12 @@
         pip install -r requirements.txt
         ```
 
-## 4. Create Azure resources
+## 2. Create Azure resources
 
 We setup our development ennvironment in the previous step. In this step, we'll **provision Azure resources** for our project, ready to use for developing our LLM Application.
 
 
-### 4.1 Authenticate with Azure
+### 2.1 Authenticate with Azure
 
 Start by connecting your Visual Studio Code environment to your Azure account:
 
@@ -46,7 +46,7 @@ Start by connecting your Visual Studio Code environment to your Azure account:
 
 Verify that the console shows a message indicating a successful authentication. **Congratulations! Your VS Code session is now connected to your Azure subscription!**
 
-### 4.2 Run Provisioning Script
+### 2.2 Run Provisioning Script
 
 The project requires a number of Azure resources to be set up, in a specified order. To simplify this, an auto-provisioning script has been provided. (NOTE: It will use the current active subscription to create the resource. If you have multiple subscriptions, use `az account set --subscription "<SUBSCRIPTION-NAME>"` first to set the desired active subscription.)
 
@@ -72,7 +72,7 @@ The script should **set up a dedicated resource group** with the following resou
  - **Azure Storage Account**  resource
 
 
-### 4.3 Verify your resources
+### 2.3 Verify your resources' creation
 
 Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 5 resources and look like this:
 
@@ -80,7 +80,7 @@ Go back to your `Azure Portal` and find your `Resource Group`that should by now 
 
 
 
-### 4.4 Verify `.env` setup
+### 2.4 Verify `.env` setup
 
 The default sample has an `.env.sample` file that shows the relevant environment variables that need to be configured in this project. The script should create a `.env` file that has these same variables _but populated with the right values_ for your Azure resources.
 
