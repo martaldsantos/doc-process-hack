@@ -76,7 +76,7 @@ The script should **set up a dedicated resource group** with the following resou
 
 Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 5 resources and look like this:
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/db78e0b3-9a10-4e6d-a2b0-988173f6da50)
 
 
 
