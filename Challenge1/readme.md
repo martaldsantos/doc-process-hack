@@ -55,6 +55,9 @@ Run the provisioning script as follows:
   ```bash
   ./provision.sh
   ```
+
+**⚠️ Warning:** This script will create a new resource group by default. If you want to use an existing RG, replace variables `resourceGroupName`and `location` on lines 4 and 5 to the parameters of your existing RG.
+
 If you get an error of permissions, please firstly run the following code: 
 
   ```bash
