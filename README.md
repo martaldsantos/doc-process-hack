@@ -54,14 +54,6 @@ To successfully complete this hackathon, you will need the following:
 
 In order for this provision to happen, you should be either the **Owner or Contributor in an Azure Subscription**. 
 
-## Hackathon Format: Challenge-Based
-This hackathon adopts a challenge-based format, offering you a unique opportunity to learn while dealing with practical problems. Each challenge includes one or more self-contained tasks designed to test and enhance your skills in specific aspects of an AI app development. You will approach these challenges by:
-- Analyzing the problem statement.
-- Strategizing your approach to find the most effective solution.
-- Leveraging the provided lab environment and Azure AI services.
-- Collaborating with peers to refine and implement your solutions.
-
-
 ## Challenges
 1. Challenge 01: **[Hack Essentials: Crafting Services for Seamless Execution](Challenge1/readme.md)**
    - Creation of the Services necessary to conduct this Hack
