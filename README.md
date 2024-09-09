@@ -18,7 +18,7 @@ The Hackathon will be based on creating a document processing workflow using Azu
 ![image](https://github.com/user-attachments/assets/f888ce86-12ec-464d-883c-bfe96a323fa2)
 
 
-The data that will be used can be of 3 different formats: **Loan Forms, Loan Agreements and Pay Stubs**, and your solution should have the specificities into consideration.
+The data that will be used can be of 3 different formats: **Loan Forms, Loan Agreements and Pay Stubs**, and your solution should have the different specificities of each topic into consideration.
 ## Learning Objectives
 
 By participating in this hackathon, you will learn how to:
