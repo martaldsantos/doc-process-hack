@@ -1,5 +1,5 @@
 
-![Design 12 (8)](https://github.com/user-attachments/assets/c158b91d-6133-43bb-a8ca-7c01095086f1)
+![Design 12 (9)](https://github.com/user-attachments/assets/f6648dcb-ffb0-468d-9f61-e8973dfc84d8)
 
 # Intelligent Document Processing using Azure AI
 
