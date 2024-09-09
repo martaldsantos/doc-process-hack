@@ -76,8 +76,7 @@ The script should **set up a dedicated resource group** with the following resou
 
 Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 5 resources and look like this:
 
-![image](https://github.com/user-attachments/assets/db78e0b3-9a10-4e6d-a2b0-988173f6da50)
-
+![image](https://github.com/user-attachments/assets/91215492-faaf-4696-aa5c-2b955fb2f7d5)
 
 
 ### 2.4 Verify `.env` setup
