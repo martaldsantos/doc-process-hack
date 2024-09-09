@@ -13,9 +13,10 @@ Prepare to unleash your creativity and technical skills as you embark on this ex
 
 ## Architecture
 
-The Hackathon will be based on creating a document processing workflow using Azure services. The process you will create begins when a user uploads a document into an Azure Storage Account, which automatically triggers a workflow. Azure Function App is then activated to extract the contents of the document. The data undergoes a cleaning process and is structured into JSON format. Once the JSON files are created, they are stored in Azure Cosmos DB for future access. The stored data is then vectorized to prepare it for downstream analysis and chatbot interaction. The workflow is supported by Azure AI Search for advanced document searching capabilities and Azure OpenAI Service for enhancing chatbot functionality.
+The Hackathon will be based on creating an automated document processing workflow using Azure services. When a document is uploaded to an Azure Storage Account, it triggers an Azure Function App that begins by cleaning and preparing the document's content. The data is then structured into a JSON format for further processing. Leveraging AI Document Intelligence, key information is extracted automatically, improving accuracy in data handling. Additionally, Azure OpenAI Service is integrated to transform natural language to a Desired JSON format, allowing the system to further enhance and structure the document's data. Finally, the processed JSON files are stored in Azure Cosmos DB, ensuring scalable and efficient storage for easy access and future use.
 
-![image](https://github.com/user-attachments/assets/f888ce86-12ec-464d-883c-bfe96a323fa2)
+![image](https://github.com/user-attachments/assets/2eaec5e6-7327-4a63-b2d8-8f76ef33477c)
+
 
 
 The data that will be used can be of 3 different formats: **Loan Forms, Loan Agreements and Pay Stubs**, and your solution should have the different specificities of each topic into consideration.
