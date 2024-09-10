@@ -100,9 +100,8 @@ chmod u+r+x provision.sh
   
 The script should **set up a dedicated resource group** with the following resources:
 
- - **Azure Open AI service** resource
  - **Azure Document Intelligence workspace** resource
- - **Azure AI Search service**  resource
+ - **Azure OpenAI Service**  resource
  - **Azure Cosmos DB account** resource
  - **Azure Storage Account**  resource
 
@@ -120,3 +119,7 @@ The default sample has an `.env.sample` file that shows the relevant environment
 
 If the file is not created, simply copy over `.env.sample` to `.env` - then populate those values manually from the respective Azure resource pages using the Azure Portal.
 
+## Conclusion
+By reaching this section you should have every resource and installed the requirements necessary to conduct the hackathon. You have deployed an Azure AI Document Intelligence service, an Azure Cosmos DB account, an Azure Storage Account and Azure OpenAI Service.
+
+In the next challenges, you will use these services to build a strong document processing workflow.
