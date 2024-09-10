@@ -1,9 +1,9 @@
 # Challenge 2 - Leveraging Azure Document Intelligence for Data Retrieval
 
-**Expected Duration:** 60 minutes
+**Expected Duration:** 90 minutes
 
 ## Introduction
-[textoooo]
+Your goal in this challenge is to get introduced to the concept of document processing and how it can help automate and streamline workflows using Azure AI services. You will learn how to analyze and extract information from documents, such as text, tables, and layout details, using the Azure Document Intelligence service. Additionally, you will learn how to save and manage the extracted data in Azure Blob Storage, enabling efficient document handling and further processing.
 
 ## Introduction to Azure AI Document Intelligence
 
@@ -108,9 +108,8 @@ Let's go to Guide 2 to see how to process this information in a code-based solut
 
 ## Guide 2 : Use the Python SDK to analyse your documents
 
-Please jump over to the doc-processing.ipynb file to complete this step
-
+Please jump over to the `doc-processing.ipynb` file to complete this guide.
 
 
 ## Conclusion
-In this challenge, you learned how to incorporate your data with LLMs and how to use the Azure AI services to build a call center chat assistant. You created an index with the SOPs and used the LLM to generate responses based on the information present in the SOPs. You also learned how to guide the model to behave as expected by crafting a proper *System Message*. The concepts learned in this challenge are reproducible to other scenarios where you need to use LLMs to assist in the decision-making process.
+In this challenge, you learned how to process and analyze documents using Azure AI services. You utilized the Azure Document Intelligence service to extract and interpret various elements from documents, such as text, tables, and layout information. You created functions to analyze the layout of documents, extract specific content, and save the analysis results to Azure Blob Storage. Additionally, you learned how to handle and visualize the extracted data for further processing. The concepts learned in this challenge are applicable to other scenarios where document processing and analysis are required, enabling you to automate and streamline document-related workflows.
