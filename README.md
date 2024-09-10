@@ -53,7 +53,7 @@ In order for this provision to happen, you should be either the **Owner or Contr
 ## Challenges
 1. Challenge 01: **[Hack Essentials: Crafting Services for Seamless Execution](Challenge1/readme.md)**
    - Creation of the Services necessary to conduct this Hack
-2. Challenge 02: **[InsightExtractor: Leveraging Azure Document Intelligence for Data Retrieval](Challenge2/doc-processing.ipynb)**
+2. Challenge 02: **[InsightExtractor: Leveraging Azure Document Intelligence for Data Retrieval](Challenge2/readme.md)**
    - Use Azure Document Intelligence Model to retrieve information from Text and Tables
 3. Challenge 03: **[Data Modelling: From Retrieval to Upload](Challenge3/data_modelling.ipynb)**
    - Structuring the Retrieved Data and Upload it to a Cosmos DB
