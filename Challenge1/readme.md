@@ -1,5 +1,37 @@
 
-## 1. Manual Setup Environment, on device (Anaconda or venv)
+## 1. Enviornment Creation and Resources Deployment
+
+**Expected Duration:** 30 minutes
+
+## Introduction
+Your goal in this challenge is to create the services necessary to conduct this hackathon. You will deploy the required resources in Azure, including the Azure AI services that will be used in the subsequent challenges. By completing this challenge, you will set up the foundation for the rest of the hackathon.
+
+## Introduction to the services
+
+<img src="https://learn.microsoft.com/en-us/training/achievements/extract-data-from-forms-use-form-recognizer.svg" alt="Description" width="25" style="vertical-align: middle;"/> <span style="font-size:14px; font-weight:bold;">Azure AI Document Intelligence
+
+[Azure AI Document Intelligence](https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence?msockid=3b33a8ae1caf6af23334bc5b1dc86b9e) is an AI service that applies advanced machine learning to extract text, key-value pairs, tables, and structures from documents automatically and accurately. Turn documents into usable data and shift your focus to acting on information rather than compiling it. Start with prebuilt models or create custom models tailored to your documents both on premises and in the cloud with the AI Document Intelligence studio or SDK.
+
+
+
+<img src="https://ms-azuretools.gallerycdn.vsassets.io/extensions/ms-azuretools/vscode-azurestorage/0.16.1/1724440951047/Microsoft.VisualStudio.Services.Icons.Default" alt="Description" width="25" style="vertical-align: middle;"/> <span style="font-size:14px; font-weight:bold;">Azure Storage Account
+
+
+An [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) contains all of your Azure Storage data objects: blobs, files, queues, and tables. The storage account provides a unique namespace for your Azure Storage data that's accessible from anywhere in the world over HTTP or HTTPS. Data in your storage account is durable and highly available, secure, and massively scalable.
+
+
+
+<img src="https://seeklogo.com/images/A/azure-cosmos-db-logo-128436034F-seeklogo.com.png" alt="Description" width="25" style="vertical-align: middle;"/> <span style="font-size:14px; font-weight:bold;"> Azure Cosmos DB
+
+[Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/#Features) is a globally distributed, multi-model database service provided by Microsoft Azure. It is designed to provide low latency, elastic scalability of throughput, well-defined semantics for data consistency, and high availability. Azure Cosmos DB supports multiple data models including key-value, documents, graphs, and columnar. It is a good choice for any serverless application that needs low order-of-millisecond response times and needs to scale rapidly and globally.
+
+<img src="https://media.licdn.com/dms/image/D5612AQHlaIMpsaaU9Q/article-cover_image-shrink_600_2000/0/1704683403049?e=2147483647&v=beta&t=vHiU0ktWw5l6v2UlURc_wyVqh_vIujasJHm1URDDE2o" alt="Description" width="35" style="vertical-align: middle;"/> <span style="font-size:14px; font-weight:bold;">Azure Functions
+
+[Azure Functions](https://azure.microsoft.com/en-us/products/functions/?msockid=3b33a8ae1caf6af23334bc5b1dc86b9e) is a cloud service available on-demand that provides all the continually updated infrastructure and resources needed to run your applications. You focus on the code that matters most to you, in the most productive language for you, and Functions handles the rest. Functions provides serverless compute for Azure. You can use Functions to build web APIs, respond to database changes, process IoT streams, manage message queues, and more.
+
+
+
+## 1. Resource Deployment Guide
 
 1. Clone the repo
 
