@@ -30,6 +30,11 @@ An [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/commo
 [Azure Functions](https://azure.microsoft.com/en-us/products/functions/?msockid=3b33a8ae1caf6af23334bc5b1dc86b9e) is a cloud service available on-demand that provides all the continually updated infrastructure and resources needed to run your applications. You focus on the code that matters most to you, in the most productive language for you, and Functions handles the rest. Functions provides serverless compute for Azure. You can use Functions to build web APIs, respond to database changes, process IoT streams, manage message queues, and more.
 
 
+## 1. Resource Deployment Guide
+Clicking on button bellow will redirect you to the Azure portal to deploy the resources using the [ARM template](../iac) provided in this repository.
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fdoc-process-hack%2Fts%2Fiac%2Fazuredeploy.json)
+
 
 ## 1. Resource Deployment Guide
 

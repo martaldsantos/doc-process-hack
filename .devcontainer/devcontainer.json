@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	//"postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -21,9 +21,10 @@
 				//"github.copilot",
 				//"github.copilot-chat",
 				"ms-azuretools.vscode-azureappservice",
+				"ms-azuretools.vscode-azurefunctions",
 				"ms-python.python",
-				"benjaminbenais.copilot-theme",
-				"ms-python.autopep8"
+				"ms-python.autopep8",
+				"benjaminbenais.copilot-theme"
 			],
 			"settings": {
 				"workbench.colorTheme": "Copilot Theme"	
