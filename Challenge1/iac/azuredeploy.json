@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.29.47.4906",
-      "templateHash": "397461832502095546"
+      "version": "0.30.3.12046",
+      "templateHash": "7950322619714828297"
     }
   },
   "parameters": {
@@ -228,6 +228,25 @@
       }
     },
     {
+      "type": "Microsoft.CognitiveServices/accounts/deployments",
+      "apiVersion": "2023-05-01",
+      "name": "[format('{0}/{1}', variables('aiCognitiveServicesName'), 'gpt-4o')]",
+      "properties": {
+        "model": {
+          "format": "OpenAI",
+          "name": "gpt-4o",
+          "version": "2024-08-06"
+        }
+      },
+      "sku": {
+        "name": "GlobalStandard",
+        "capacity": 100
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.CognitiveServices/accounts', variables('aiCognitiveServicesName'))]"
+      ]
+    },
+    {
       "type": "Microsoft.CognitiveServices/accounts",
       "apiVersion": "2023-05-01",
       "name": "[variables('documentIntelligenceName')]",
@@ -259,49 +278,25 @@
     }
   ],
   "outputs": {
-    "storage_account_name": {
+    "storageAccountName": {
       "type": "string",
       "value": "[variables('storageAccountName')]"
     },
-    "storage_account_key": {
-      "type": "string",
-      "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2023-05-01').keys[0].value]"
-    },
-    "storage_connection_string": {
-      "type": "string",
-      "value": "[format('DefaultEndpointsProtocol=https;AccountName={0};EndpointSuffix={1};AccountKey={2}', variables('storageAccountName'), environment().suffixes.storage, listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2023-05-01').keys[0].value)]"
-    },
-    "cosmos_account_name": {
+    "cosmosdbAccountName": {
       "type": "string",
       "value": "[variables('databaseAccountName')]"
     },
-    "cosmos_key": {
+    "documentIntelligenceName": {
       "type": "string",
-      "value": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', variables('databaseAccountName')), '2024-05-15').primaryMasterKey]"
+      "value": "[variables('documentIntelligenceName')]"
     },
-    "doc_ai_endpoint": {
+    "aiCognitiveServicesName": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', variables('documentIntelligenceName')), '2023-05-01').endpoint]"
+      "value": "[variables('aiCognitiveServicesName')]"
     },
-    "doc_ai_key": {
-      "type": "string",
-      "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', variables('documentIntelligenceName')), '2023-05-01').key1]"
-    },
-    "openai_endpoint": {
-      "type": "string",
-      "value": "[reference(resourceId('Microsoft.CognitiveServices/accounts', variables('aiCognitiveServicesName')), '2023-05-01').endpoint]"
-    },
-    "openai_key": {
-      "type": "string",
-      "value": "[listKeys(resourceId('Microsoft.CognitiveServices/accounts', variables('aiCognitiveServicesName')), '2023-05-01').key1]"
-    },
-    "search_service_name": {
+    "searchServiceName": {
       "type": "string",
       "value": "[variables('searchServiceName')]"
-    },
-    "search_admin_key": {
-      "type": "string",
-      "value": "[listAdminKeys(resourceId('Microsoft.Search/searchServices', variables('searchServiceName')), '2023-11-01').primaryKey]"
     }
   }
 }

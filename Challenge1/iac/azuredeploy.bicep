@@ -200,6 +200,22 @@ resource aiCognitiveServices 'Microsoft.CognitiveServices/accounts@2023-05-01' =
   }
 }
 
+resource aiCognitiveServicesDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05-01' = {
+  name: 'gpt-4o'
+  parent: aiCognitiveServices
+  properties: {
+    model: {
+      format: 'OpenAI'
+      name: 'gpt-4o'
+      version: '2024-08-06'
+    }
+  }
+  sku: {
+    name: 'GlobalStandard'
+    capacity: 100
+  }
+}
+
 /*
   Create Azure Document Intelligence
 */
@@ -244,14 +260,8 @@ resource searchService 'Microsoft.Search/searchServices@2023-11-01' = {
   Return output values
 */
 
-output storage_account_name string = storageAccountName
-output storage_account_key string = storageAccount.listKeys().keys[0].value
-output storage_connection_string string = 'DefaultEndpointsProtocol=https;AccountName=${storageAccountName};EndpointSuffix=${environment().suffixes.storage};AccountKey=${storageAccount.listKeys().keys[0].value}'
-output cosmos_account_name string = databaseAccountName
-output cosmos_key string = databaseAccount.listKeys().primaryMasterKey
-output doc_ai_endpoint string = documentIntelligence.properties.endpoint
-output doc_ai_key string = documentIntelligence.listKeys().key1
-output openai_endpoint string = aiCognitiveServices.properties.endpoint
-output openai_key string = aiCognitiveServices.listKeys().key1
-output search_service_name string = searchServiceName
-output search_admin_key string = searchService.listAdminKeys().primaryKey
+output storageAccountName string = storageAccountName
+output cosmosdbAccountName string = databaseAccountName
+output documentIntelligenceName string = documentIntelligenceName
+output aiCognitiveServicesName string = aiCognitiveServicesName
+output searchServiceName string = searchServiceName

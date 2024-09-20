@@ -9,7 +9,8 @@
 	"features": {
 		"ghcr.io/devcontainers/features/azure-cli:1": {
 			"installBicep": true
-		}
+		},
+		"ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1" : {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -24,7 +25,6 @@
 			"extensions": [
 				"github.copilot",
 				"github.copilot-chat",
-				"ms-azuretools.vscode-azureappservice",
 				"ms-azuretools.vscode-azurefunctions",
 				"ms-python.python",
 				"ms-python.autopep8",

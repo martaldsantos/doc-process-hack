@@ -30,95 +30,39 @@ An [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/commo
 [Azure Functions](https://azure.microsoft.com/en-us/products/functions/?msockid=3b33a8ae1caf6af23334bc5b1dc86b9e) is a cloud service available on-demand that provides all the continually updated infrastructure and resources needed to run your applications. You focus on the code that matters most to you, in the most productive language for you, and Functions handles the rest. Functions provides serverless compute for Azure. You can use Functions to build web APIs, respond to database changes, process IoT streams, manage message queues, and more.
 
 
-## 1. Resource Deployment Guide
-Clicking on button bellow will redirect you to the Azure portal to deploy the resources using the [ARM template](../iac) provided in this repository.
+## Resource Deployment Guide
+Clicking on button bellow will redirect you to the Azure portal to deploy the resources using the [ARM template](iac) provided in this repository.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fdoc-process-hack%2Fts%2Fiac%2Fazuredeploy.json)
 
+Resource deployment can take up to 5 minutes. Once the deployment is complete, you will see the resources in your Azure portal.
 
-## 1. Resource Deployment Guide
+In the meantime, you can proceed with the next step - opening pre-configured development environment in GitHub Codespaces.
 
-1. Clone the repo
+GitHub Codespaces is a cloud-based development environment that allows you to code from anywhere. It provides a fully configured environment that can be launched directly from any GitHub repository, saving you from lengthy setup times. You can access Codespaces from your browser, Visual Studio Code, or the GitHub CLI, making it easy to work from virtually any device.
 
-    ```bash
-    git clone https://github.com/martaldsantos/doc-process-hack
-    ```
+To open this repository in GitHub Codespaces, click on the button below:
 
-1. Open the repo in VS Code
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/martaldsantos/doc-process-hack/tree/ts)
 
-    ```bash
-    cd doc-process-hack
-    code .
-    ```
-
-1. Create a new local Python environment using **either** [anaconda](https://www.anaconda.com/products/individual) **or** [venv](https://docs.python.org/3/library/venv.html) for a managed environment.
-
-    1. **Option 1**: Using anaconda
-
-        ```bash
-        conda create -n contoso-chat python=3.11
-        conda activate contoso-chat
-        pip install -r requirements.txt
-        ```
-
-    1. **Option 2:** Using venv
-
-        ```bash
-        python3 -m venv .venv
-        source .venv/bin/activate
-        pip install -r requirements.txt
-        ```
-
-## 2. Create Azure resources
-
-We setup our development ennvironment in the previous step. In this step, we'll **provision Azure resources** for our project, ready to use for developing our LLM Application.
-
-
-### 2.1 Authenticate with Azure
-
-Start by connecting your Visual Studio Code environment to your Azure account:
-
-1. Open the terminal in VS Code and use command `az login`. 
-1. Complete the authentication flow. 
-
-Verify that the console shows a message indicating a successful authentication. **Congratulations! Your VS Code session is now connected to your Azure subscription!**
-
-### 2.2 Run Provisioning Script
-
-The project requires a number of Azure resources to be set up, in a specified order. To simplify this, an auto-provisioning script has been provided. (NOTE: It will use the current active subscription to create the resource. If you have multiple subscriptions, use `az account set --subscription "<SUBSCRIPTION-NAME>"` first to set the desired active subscription.)
-
-Run the provisioning script as follows:
-
-  ```bash
-  ./provision.sh
-  ```
-
-**⚠️ Warning:** This script will create a new resource group by default. If you want to use an existing RG, replace variables `resourceGroupName`and `location` on lines 4 and 5 to the parameters of your existing RG.
-
-If you get an error of permissions, please firstly run the following code: 
-
-  ```bash
-chmod u+r+x provision.sh
-  ```
-
- This run should take a couple of minutes. 
-  
-The script should **set up a dedicated resource group** with the following resources:
-
- - **Azure Document Intelligence workspace** resource
- - **Azure OpenAI Service**  resource
- - **Azure Cosmos DB account** resource
- - **Azure Storage Account**  resource
-
-
-### 2.3 Verify your resources' creation
+## Verify your resources' creation
 
 Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 5 resources and look like this:
 
 ![image](https://github.com/user-attachments/assets/91215492-faaf-4696-aa5c-2b955fb2f7d5)
 
+After deploying the resources, you will need to configure the environment variables in the `.env` file. The `.env` file is a configuration file that contains the environment variables for the application. The `.env` file is automatically created runnig following command within terminal in your Codespace:
 
-### 2.4 Verify `.env` setup
+```bash
+cd Challenge1
+./get-keys.sh --resource-group <resource-group-name>
+```
+
+This script will connect to Azure and fetch the necessary keys and populate the `.env` file with the required values in the root directory of the repository. If needed, script will prompt you to sign in to your Azure account.
+
+## Verify `.env` setup
+
+When the script is finished, review the `.env` file to ensure that all the values are correct. If you need to make any changes, you can do so manually.
 
 The default sample has an `.env.sample` file that shows the relevant environment variables that need to be configured in this project. The script should create a `.env` file that has these same variables _but populated with the right values_ for your Azure resources.
 
