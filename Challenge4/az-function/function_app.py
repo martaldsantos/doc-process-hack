@@ -9,6 +9,7 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
                                connection="STORAGE_CONNECTION_STRING") 
 def ProcessLoanAgreements(myblob: func.InputStream):  
     
+    container_name = 'loanagreements'
     blob_service_client = get_blob_service_client()
 
     file_name, file_root = get_file_names(myblob.name)
@@ -18,17 +19,18 @@ def ProcessLoanAgreements(myblob: func.InputStream):
         logging.info(f"Ignoring file {file_name} as it is a JSON file.")
         return    
     
-    sas_url = generate_sas_url(blob_service_client, 'paystubs', file_name)   
+    sas_url = generate_sas_url(blob_service_client, container_name, file_name)   
 
     analysis_results = analyze_layout(sas_url=sas_url)
 
     # Save the analysis results
-    save_analysis_results(blob_service_client, 'paystubs', file_root, analysis_results)
+    save_analysis_results(blob_service_client, container_name, file_root, analysis_results)
 
 @app.blob_trigger(arg_name="myblob", path="loanforms",
                                connection="STORAGE_CONNECTION_STRING") 
 def ProcessLoanForms(myblob: func.InputStream):  
     
+    container_name = 'loanforms'
     blob_service_client = get_blob_service_client()
     
     file_name, file_root = get_file_names(myblob.name)
@@ -38,17 +40,18 @@ def ProcessLoanForms(myblob: func.InputStream):
         logging.info(f"Ignoring file {file_name} as it is a JSON file.")
         return
     
-    sas_url = generate_sas_url(blob_service_client, 'paystubs', file_name)   
+    sas_url = generate_sas_url(blob_service_client, container_name, file_name)   
 
     analysis_results = analyze_layout(sas_url=sas_url)
 
     # Save the analysis results
-    save_analysis_results(blob_service_client, 'paystubs', file_root, analysis_results)
+    save_analysis_results(blob_service_client, container_name, file_root, analysis_results)
 
 @app.blob_trigger(arg_name="myblob", path="paystubs",
                                connection="STORAGE_CONNECTION_STRING") 
 def ProcessPayStubs(myblob: func.InputStream):  
     
+    container_name = 'paystubs'
     blob_service_client = get_blob_service_client()
     
     file_name, file_root = get_file_names(myblob.name)
@@ -58,9 +61,9 @@ def ProcessPayStubs(myblob: func.InputStream):
         logging.info(f"Ignoring file {file_name} as it is a JSON file.")
         return
     
-    sas_url = generate_sas_url(blob_service_client, 'paystubs', file_name)   
+    sas_url = generate_sas_url(blob_service_client, container_name, file_name)   
 
     analysis_results = analyze_layout(sas_url=sas_url)
 
     # Save the analysis results
-    save_analysis_results(blob_service_client, 'paystubs', file_root, analysis_results)
+    save_analysis_results(blob_service_client, container_name, file_root, analysis_results)
