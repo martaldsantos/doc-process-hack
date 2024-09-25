@@ -20,11 +20,15 @@ The `local.settings.json` file is a configuration file that contains the environ
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsStorage": "",
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "DOCUMENTINTELLIGENCE_ENDPOINT": "",
     "DOCUMENTINTELLIGENCE_API_KEY": "",
-    "STORAGE_CONNECTION_STRING": ""
+    "STORAGE_CONNECTION_STRING": "",
+    "COSMOS_CONNECTION_STRING" : "",
+    "AZURE_OPENAI_ENDPOINT" : "",
+    "AZURE_OPENAI_KEY" : "",
+    "AZURE_OPENAI_MODEL" : ""
   }
 }
 ```
@@ -37,7 +41,13 @@ This should already be installed in your GitHub Codespaces.
 
 To start the Azure Function, navigate to the `az-function` folder run the following command in the terminal:
 
+NOTE: Azure Functions Core Tools requires Python 3.9 to 3.11. Python 3.12 is not supported.
+
 ```bash
+# Navigate to the az-function folder
+cd Challenge4/az-function
+
+pip install -r requirements.txt
 func host start
 ```
 

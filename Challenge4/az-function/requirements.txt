@@ -7,3 +7,5 @@ azure-ai-documentintelligence
 azure-storage-blob
 azure-cosmos
 pandas
+pydantic
+openai
