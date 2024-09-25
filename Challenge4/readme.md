@@ -44,15 +44,43 @@ To start the Azure Function, navigate to the `az-function` folder run the follow
 NOTE: Azure Functions Core Tools requires Python 3.9 to 3.11. Python 3.12 is not supported.
 
 ```bash
+# Create a virtual environment using VS Code
+# 1. Open the command palette (Ctrl + Shift + P)
+# 2. Type Python: Create Virtual Environment
+# 3. Select Venv
+# 4. Select Python 3.9 or any version between 3.9 and 3.11
+# 5. Select Challenge4/az-function/requirements.txt to install the required packages
+# 6. Check if the virtual environment folder was created in the root of the repository (.venv folder)
+# 7. Relaunch the terminal
+
 # Navigate to the az-function folder
 cd Challenge4/az-function
 
-pip install -r requirements.txt
+# Start the Azure Function
 func host start
 ```
+
+You should now see the Azure Function running locally and processing the data files as they are uploaded to the containers in the Azure Storage Account.
 
 ## Resource Deployment Guide
 
 ### VS Code
 
+Using the Azure Functions extension in VS Code, you can deploy your Azure Function to Azure.
+
+1. Open the command palette (Ctrl + Shift + P)
+2. Type `Azure Functions: Upload Local Settings`
+3. Select the Function App you created in Challenge 1.
+4. Right-click on the `az-function` folder.
+5. Select `Deploy to Function App`.
+6. Select the Function App you created in Challenge 1.
+
 ### Azure CLI
+
+1. Navigate to the `az-function` folder.
+2. Run the following commands to deploy the Azure Function to Azure.
+```bash
+az login
+az account set --subscription <subscription_id_where_function_exists>
+func azure functionapp publish <function_app_name> --publish-local-settings
+```
