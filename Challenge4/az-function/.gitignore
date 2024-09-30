@@ -6,8 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-# *.png
-
 # Distribution / packaging
 .Python
 build/
@@ -135,4 +133,3 @@ __blobstorage__
 __queuestorage__
 __azurite_db*__.json
 .python_packages
-/.vs

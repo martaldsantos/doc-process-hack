@@ -2,8 +2,6 @@
 # The Python Worker is managed by Azure Functions platform
 # Manually managing azure-functions-worker may cause unexpected issues
 
-azure
-azure-functions
 azure-functions  
 azure-storage-blob  
 python-dotenv  
@@ -11,5 +9,7 @@ azure-ai-formrecognizer
 azure-ai-documentintelligence 
 azure-core  
 azure-cosmos  
-pandas  
-azure-functions-worker
+pandas
+pydantic
+openai
+ipykernel 

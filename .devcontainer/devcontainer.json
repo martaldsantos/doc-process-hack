@@ -3,7 +3,7 @@
 {
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
@@ -28,7 +28,11 @@
 				"ms-azuretools.vscode-azurefunctions",
 				"ms-python.python",
 				"ms-python.autopep8",
-				"benjaminbenais.copilot-theme"
+				"benjaminbenais.copilot-theme",
+				"Azurite.azurite",
+				"ms-azuretools.vscode-azurestorage",
+				"ms-azuretools.vscode-bicep",
+				"ms-vscode.azure-account"
 			],
 			"settings": {
 				"workbench.colorTheme": "Copilot Theme"	

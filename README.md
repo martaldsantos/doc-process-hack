@@ -26,7 +26,8 @@ By participating in this hackathon, you will learn how to:
 
 When a document is uploaded to an Azure Storage Account, it triggers an Azure Function App that begins by cleaning and preparing the document's content. Leveraging the Azure AI Document Intelligence, key information is extracted automatically. Additionally, for some of the documents the use of the Azure OpenAI Service is integrated to transform natural language to the desired json format, allowing the system to further enhance and semi-structure the document's data. Finally, the processed JSON files are stored in Azure Cosmos DB, ensuring scalable and efficient storage for easy access and future use.
 
-![image](https://github.com/user-attachments/assets/2eaec5e6-7327-4a63-b2d8-8f76ef33477c)
+![image](https://github.com/user-attachments/assets/8e237bc7-46ee-43e0-a383-46392534aeb4)
+
 
 The data that will be used can be of 3 different formats: **Loan Forms, Loan Agreements and Pay Stubs**, and your solution should have the different specificities of each topic into consideration.
 
