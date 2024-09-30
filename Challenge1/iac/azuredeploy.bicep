@@ -173,7 +173,7 @@ resource functionApp 'Microsoft.Web/sites@2022-09-01' = {
       ftpsState: 'Disabled'
       minTlsVersion: '1.2'
       use32BitWorkerProcess: false
-      linuxFxVersion: 'PYTHON|3.12'
+      linuxFxVersion: 'PYTHON|3.11' //Latest Python version that supports Azure Functions
     }
     
     httpsOnly: true
@@ -224,7 +224,7 @@ var documentIntelligenceName = '${prefix}-di-${suffix}'
 
 resource documentIntelligence 'Microsoft.CognitiveServices/accounts@2023-05-01' = {
   name: documentIntelligenceName
-  location: location
+  location: 'westeurope' //Hardcoded to westeurope as it is one of the supported regions for Document Intelligence latest SDK
   sku: {
     name: 'S0'
   }
