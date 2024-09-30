@@ -18,7 +18,7 @@ By participating in this hackathon, you will learn how to:
 - **Process Documentation:** Understand the general structure of the outputs from a Azure Document Intelligence and explain how OCR can be leveraged in a document processing solution
 - **Structure Information:** You will develop the competencies behind the cleaning and structuring of data both using common Python like Pandas and Numpy, but also leveraging [GPT-4o-2024-08-06](https://azure.microsoft.com/en-us/blog/announcing-a-new-openai-feature-for-developers-on-azure/?msockid=020102d7a56062ac18f017d0a4d46360), the new model focuses on enhancing productivity through Structured Outputs, like JSON Schemas.
 - **Automate Workflows with Azure Functions:** Learn how to deploy Azure Functions to automate any workflows. Azure Functions allow you to execute code in response to triggers, such as file uploads or form submissions.
-
+- **Orchestrate Pipelines with GitHub Actions:** Discover how to use GitHub Actions to automate and manage the entire lifecycle of your Azure Functions pipeline. 
 
 
 
@@ -28,8 +28,6 @@ When a document is uploaded to an Azure Storage Account, it triggers an Azure Fu
 
 ![image](https://github.com/user-attachments/assets/9f431203-93d2-41ad-9f51-160607fde604)
 
-
-
 The data that will be used can be of 3 different formats: **Loan Forms, Loan Agreements and Pay Stubs**, and your solution should have the different specificities of each topic into consideration.
 
 
@@ -38,10 +36,10 @@ The data that will be used can be of 3 different formats: **Loan Forms, Loan Agr
 
 To successfully complete this hackathon, you will need the following:
 
-1. An active **Azure subscription**
-2. GitHub account to access the repository and run [GitHub Codespaces](https://github.com/features/codespaces)
-3. Familiarity with Python programming, including handling JSON data and making API calls.
-4. Ability to provision the following resources: 
+1. GitHub account to access the repository and run [GitHub Codespaces](https://github.com/features/codespaces)
+2. Familiarity with Python programming, including handling JSON data and making API calls.
+3. An active **Azure subscription** 
+4. Ability to provision the following resources in **Sweden Central**: 
 - Azure Cosmos DB
 - Azure Document Intelligence
 - Azure Application Insights
