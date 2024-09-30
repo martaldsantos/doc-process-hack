@@ -25,6 +25,7 @@ Please jump over to the `paystub_modelling.ipynb` file to complete this guide.
 
 ## Guide 3 : Extract Information from Loan Agreements
 
+Please jump over to the `loanagreements_modelling.ipynb` file to complete this guide.
 
 
 ## Conclusion
