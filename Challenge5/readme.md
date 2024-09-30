@@ -1,4 +1,6 @@
-# Challenge 05: Set up CI/CD for Azure Function (Optional)
+# Challenge 05: Set up CI/CD for Azure Function
+
+**Expected Duration:** 30 minutes
 
 ## Introduction
 Your goal in this challenge is to set up a CI/CD pipeline for the Azure Function created in Challenge 4. You will use GitHub Actions to automate the deployment of the Azure Function to the Azure Function App.
@@ -32,3 +34,6 @@ env:
 ```
 
 Push some test changes to the repository and check the GitHub Actions tab to see the workflow running.
+
+## Time for Testing! 
+
