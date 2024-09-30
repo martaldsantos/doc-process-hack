@@ -19,7 +19,6 @@ By participating in this hackathon, you will learn how to:
 - Develop Competencies in Document Processing
 - Understand the complecity behind typical Information Structuring
 - Develop Prototype Applications
-- Receive Feedback and Iterate
 
 
 ## Architecture
@@ -57,7 +56,8 @@ In order for this provision to happen, you should be either the **Owner or Contr
    - Structuring the Retrieved Data and Upload it to a Cosmos DB
 4. Challenge 04: **[AutoFlow: Streamlining Processes with Azure Functions](Challenge4/readme.md)**
    - Creation of a Function App that will Automate these Processes
-
+5. Challenge 05: **[Set up CI/CD for Azure Function](Challenge5/readme.md)**
+   - Creation of the CI/CD pipeline to automate the run of the Azure Function 
 
 Each challenge comes with its own set of tasks and objectives. Feel free to explore the challenges, learn, and have fun during this hackathon! If you have any questions, don't hesitate to reach out to your coach.
 
@@ -65,5 +65,6 @@ Happy hacking!
 
 
 ## Contributors
+- Joao Gonçalves
 - Marta Santos
 - Tomas Szabo
