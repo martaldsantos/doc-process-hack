@@ -37,12 +37,9 @@ The data that will be used can be of 3 different formats: **Loan Forms, Loan Agr
 To successfully complete this hackathon, you will need the following:
 
 1. An active **Azure subscription**
-2. Install [Visual Studio Code](https://code.visualstudio.com/download)
-3. Install the [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) for your device OS
-4. Install the [Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) in VSCode
-5. Install the [Azure Functions Core Tools](https://learn.microsoft.com/en-gb/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp) in VSCode
-6. Familiarity with Python programming, including handling JSON data and making API calls.
-7. Ability to provision the following resources: 
+2. GitHub account to access the repository and run [GitHub Codespaces](https://github.com/features/codespaces)
+3. Familiarity with Python programming, including handling JSON data and making API calls.
+4. Ability to provision the following resources: 
 - Azure Cosmos DB
 - Azure Document Intelligence
 - Azure OpenAI Service
@@ -68,3 +65,4 @@ Happy hacking!
 
 ## Contributors
 - Marta Santos
+- Tomas Szabo

@@ -1,0 +1,302 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.30.3.12046",
+      "templateHash": "7950322619714828297"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "swedencentral",
+      "allowedValues": [
+        "swedencentral"
+      ],
+      "metadata": {
+        "description": "Azure location where resources should be deployed (e.g., swedencentral)"
+      }
+    }
+  },
+  "variables": {
+    "prefix": "hackdocs",
+    "suffix": "[uniqueString(resourceGroup().id)]",
+    "databaseAccountName": "[format('{0}-cosmosdb-{1}', variables('prefix'), variables('suffix'))]",
+    "databaseName": "ContosoDB",
+    "databaseContainerNames": [
+      "PayStubs",
+      "LoanForms",
+      "LoanAgreements"
+    ],
+    "locations": [
+      {
+        "locationName": "[parameters('location')]",
+        "failoverPriority": 0,
+        "isZoneRedundant": false
+      }
+    ],
+    "storageAccountName": "[replace(format('{0}-sa-{1}', variables('prefix'), variables('suffix')), '-', '')]",
+    "functionHostingPlanName": "[format('{0}-function-asp-{1}', variables('prefix'), variables('suffix'))]",
+    "functionAppName": "[format('{0}-function-{1}', variables('prefix'), variables('suffix'))]",
+    "functionLogAnalyticsWorkspaceName": "[format('{0}-loganalytics-{1}', variables('prefix'), variables('suffix'))]",
+    "functionApplicationInsightsName": "[format('{0}-appinsights-{1}', variables('prefix'), variables('suffix'))]",
+    "aiCognitiveServicesName": "[format('{0}-aiservices-{1}', variables('prefix'), variables('suffix'))]",
+    "documentIntelligenceName": "[format('{0}-di-{1}', variables('prefix'), variables('suffix'))]",
+    "searchServiceName": "[format('{0}-search-{1}', variables('prefix'), variables('suffix'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.DocumentDB/databaseAccounts",
+      "apiVersion": "2024-05-15",
+      "name": "[variables('databaseAccountName')]",
+      "kind": "GlobalDocumentDB",
+      "location": "[parameters('location')]",
+      "properties": {
+        "consistencyPolicy": {
+          "defaultConsistencyLevel": "Session"
+        },
+        "locations": "[variables('locations')]",
+        "databaseAccountOfferType": "Standard",
+        "enableAutomaticFailover": false,
+        "enableMultipleWriteLocations": false
+      }
+    },
+    {
+      "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
+      "apiVersion": "2024-05-15",
+      "name": "[format('{0}/{1}', variables('databaseAccountName'), variables('databaseName'))]",
+      "properties": {
+        "resource": {
+          "id": "[variables('databaseName')]"
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.DocumentDB/databaseAccounts', variables('databaseAccountName'))]"
+      ]
+    },
+    {
+      "copy": {
+        "name": "databaseContainer",
+        "count": "[length(variables('databaseContainerNames'))]"
+      },
+      "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+      "apiVersion": "2024-05-15",
+      "name": "[format('{0}/{1}/{2}', variables('databaseAccountName'), variables('databaseName'), variables('databaseContainerNames')[copyIndex()])]",
+      "properties": {
+        "resource": {
+          "id": "[variables('databaseContainerNames')[copyIndex()]]",
+          "partitionKey": {
+            "paths": [
+              "/id"
+            ],
+            "kind": "Hash"
+          }
+        },
+        "options": {
+          "autoscaleSettings": {
+            "maxThroughput": 1000
+          }
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', variables('databaseAccountName'), variables('databaseName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-05-01",
+      "name": "[variables('storageAccountName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2"
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces",
+      "apiVersion": "2021-06-01",
+      "name": "[variables('functionLogAnalyticsWorkspaceName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "retentionInDays": 30,
+        "features": {
+          "searchVersion": 1
+        },
+        "sku": {
+          "name": "PerGB2018"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Insights/components",
+      "apiVersion": "2020-02-02",
+      "name": "[variables('functionApplicationInsightsName')]",
+      "location": "[parameters('location')]",
+      "kind": "web",
+      "properties": {
+        "Application_Type": "web",
+        "WorkspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', variables('functionLogAnalyticsWorkspaceName'))]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.OperationalInsights/workspaces', variables('functionLogAnalyticsWorkspaceName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('functionHostingPlanName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Y1",
+        "tier": "Dynamic"
+      },
+      "properties": {
+        "reserved": true
+      }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('functionAppName')]",
+      "location": "[parameters('location')]",
+      "kind": "functionapp",
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]",
+        "siteConfig": {
+          "appSettings": [
+            {
+              "name": "AzureWebJobsStorage",
+              "value": "[format('DefaultEndpointsProtocol=https;AccountName={0};EndpointSuffix={1};AccountKey={2}', variables('storageAccountName'), environment().suffixes.storage, listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2023-05-01').keys[0].value)]"
+            },
+            {
+              "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+              "value": "[format('DefaultEndpointsProtocol=https;AccountName={0};EndpointSuffix={1};AccountKey={2}', variables('storageAccountName'), environment().suffixes.storage, listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2023-05-01').keys[0].value)]"
+            },
+            {
+              "name": "WEBSITE_CONTENTSHARE",
+              "value": "[toLower(variables('functionAppName'))]"
+            },
+            {
+              "name": "FUNCTIONS_EXTENSION_VERSION",
+              "value": "~4"
+            },
+            {
+              "name": "APPINSIGHTS_CONNECTION_STRING",
+              "value": "[reference(resourceId('Microsoft.Insights/components', variables('functionApplicationInsightsName')), '2020-02-02').ConnectionString]"
+            },
+            {
+              "name": "FUNCTIONS_WORKER_RUNTIME",
+              "value": "python"
+            }
+          ],
+          "cors": {
+            "allowedOrigins": [
+              "*"
+            ]
+          },
+          "ftpsState": "Disabled",
+          "minTlsVersion": "1.2",
+          "use32BitWorkerProcess": false,
+          "linuxFxVersion": "PYTHON|3.12"
+        },
+        "httpsOnly": true
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Insights/components', variables('functionApplicationInsightsName'))]",
+        "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2023-05-01",
+      "name": "[variables('aiCognitiveServicesName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "S0"
+      },
+      "kind": "OpenAI",
+      "properties": {
+        "apiProperties": {
+          "statisticsEnabled": false
+        }
+      }
+    },
+    {
+      "type": "Microsoft.CognitiveServices/accounts/deployments",
+      "apiVersion": "2023-05-01",
+      "name": "[format('{0}/{1}', variables('aiCognitiveServicesName'), 'gpt-4o')]",
+      "properties": {
+        "model": {
+          "format": "OpenAI",
+          "name": "gpt-4o",
+          "version": "2024-08-06"
+        }
+      },
+      "sku": {
+        "name": "GlobalStandard",
+        "capacity": 100
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.CognitiveServices/accounts', variables('aiCognitiveServicesName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2023-05-01",
+      "name": "[variables('documentIntelligenceName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "S0"
+      },
+      "kind": "FormRecognizer",
+      "properties": {
+        "apiProperties": {
+          "statisticsEnabled": false
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Search/searchServices",
+      "apiVersion": "2023-11-01",
+      "name": "[variables('searchServiceName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "basic"
+      },
+      "properties": {
+        "hostingMode": "default"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.CognitiveServices/accounts', variables('aiCognitiveServicesName'))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "type": "string",
+      "value": "[variables('storageAccountName')]"
+    },
+    "cosmosdbAccountName": {
+      "type": "string",
+      "value": "[variables('databaseAccountName')]"
+    },
+    "documentIntelligenceName": {
+      "type": "string",
+      "value": "[variables('documentIntelligenceName')]"
+    },
+    "aiCognitiveServicesName": {
+      "type": "string",
+      "value": "[variables('aiCognitiveServicesName')]"
+    },
+    "searchServiceName": {
+      "type": "string",
+      "value": "[variables('searchServiceName')]"
+    }
+  }
+}
