@@ -7,7 +7,7 @@ Welcome to the Intelligent Document Processing using Azure AI Hackathon! Today, 
 
 
 ## Introduction
-As participants, you will delve into innovative solutions that leverage AI to streamline workflows, reduce human error, and expedite the handling of critical documents. By integrating advanced vision technologies, you will create applications that not only improve operational efficiency but also elevate the overall customer experience at Contoso Bank. 
+As a participant, you will delve into innovative solutions that leverage AI to streamline workflows, reduce human error, and expedite the handling of critical documents. By integrating advanced vision technologies, you will create applications that not only improve operational efficiency but also elevate the overall customer experience at Contoso Bank. 
 
 Prepare to unleash your creativity and technical skills as you embark on this exciting journey to shape the future of the financial services!
 
@@ -15,17 +15,19 @@ Prepare to unleash your creativity and technical skills as you embark on this ex
 
 By participating in this hackathon, you will learn how to:
 
-- Gain Practical Experience with Azure Technologies
-- Develop Competencies in Document Processing
-- Understand the complecity behind typical Information Structuring
-- Develop Prototype Applications
+- **Process Documentation:** Understand the general structure of the outputs from a Azure Document Intelligence and explain how OCR can be leveraged in a document processing solution
+- **Structure Information:** You will develop the competencies behind the cleaning and structuring of data both using common Python like Pandas and Numpy, but also leveraging [GPT-4o-2024-08-06](https://azure.microsoft.com/en-us/blog/announcing-a-new-openai-feature-for-developers-on-azure/?msockid=020102d7a56062ac18f017d0a4d46360), the new model focuses on enhancing productivity through Structured Outputs, like JSON Schemas.
+- **Automate Workflows with Azure Functions:** Learn how to deploy Azure Functions to automate any workflows. Azure Functions allow you to execute code in response to triggers, such as file uploads or form submissions.
+
+
 
 
 ## Architecture
 
-When a document is uploaded to an Azure Storage Account, it triggers an Azure Function App that begins by cleaning and preparing the document's content. Leveraging the Azure AI Document Intelligence, key information is extracted automatically. Additionally, for some of the documents the use of the Azure OpenAI Service is integrated to transform natural language to the desired json format, allowing the system to further enhance and semi-structure the document's data. Finally, the processed JSON files are stored in Azure Cosmos DB, ensuring scalable and efficient storage for easy access and future use.
+When a document is uploaded to an Azure Storage Account, it triggers an Azure Function App that begins by cleaning and preparing the document's content. Leveraging the Azure AI Document Intelligence, key information is extracted automatically. Additionally, for some of the documents the use of the Azure OpenAI Service is integrated to transform natural language to the desired json format, allowing the system to further enhance and semi-structure the document's data. Finally, the processed JSON files are stored in Azure Cosmos DB, ensuring scalable and efficient storage for easy access and future use. 
 
-![image](https://github.com/user-attachments/assets/8e237bc7-46ee-43e0-a383-46392534aeb4)
+![image](https://github.com/user-attachments/assets/9f431203-93d2-41ad-9f51-160607fde604)
+
 
 
 The data that will be used can be of 3 different formats: **Loan Forms, Loan Agreements and Pay Stubs**, and your solution should have the different specificities of each topic into consideration.
@@ -42,8 +44,14 @@ To successfully complete this hackathon, you will need the following:
 4. Ability to provision the following resources: 
 - Azure Cosmos DB
 - Azure Document Intelligence
+- Azure Application Insights
+- App Service plan
+- Azure Function App
+- Log Analytics workspace
+- Azure Search service
 - Azure OpenAI Service
 - Azure Storage Account
+- Event Grid System Topic
 
 In order for this provision to happen, you should be either the **Owner or Contributor in an active Azure Subscription**. 
 
