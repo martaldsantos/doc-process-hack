@@ -1,5 +1,7 @@
 # Challenge 04: AutoFlow: Streamlining Processes with Azure Functions
 
+**Expected Duration:** 90 minutes
+
 ## Introduction
 Your goal in this challenge is to create and deploy an Azure Function written in Python that will automate the processing of the different data files. 
 You will deploy the required resources in Azure, including the Azure Function, and set up the development environment. By completing this challenge, you will have a fully functional serverless function ready for further development.
