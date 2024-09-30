@@ -12,3 +12,4 @@ azure-cosmos
 pandas
 pydantic
 openai
+ipykernel 
