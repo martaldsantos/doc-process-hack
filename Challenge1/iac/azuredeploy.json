@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.30.3.12046",
-      "templateHash": "7950322619714828297"
+      "version": "0.30.23.60470",
+      "templateHash": "6003486806411506576"
     }
   },
   "parameters": {
@@ -256,6 +256,7 @@
       },
       "kind": "FormRecognizer",
       "properties": {
+        "customSubDomainName": "[variables('documentIntelligenceName')]",
         "apiProperties": {
           "statisticsEnabled": false
         }
