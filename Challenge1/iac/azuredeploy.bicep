@@ -230,6 +230,7 @@ resource documentIntelligence 'Microsoft.CognitiveServices/accounts@2023-05-01' 
   }
   kind: 'FormRecognizer'
   properties: {
+    customSubDomainName: documentIntelligenceName
     apiProperties: {
       statisticsEnabled: false
     }

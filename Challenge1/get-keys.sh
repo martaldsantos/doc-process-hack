@@ -58,6 +58,7 @@ rm tmp_outputs.json
 # Get the keys from the resources
 echo "Getting the keys from the resources..."
 cosmosdbAccountKey=$(az cosmosdb keys list --name $cosmosdbAccountName --resource-group $resourceGroupName --query primaryMasterKey -o tsv)
+cosmosdbEndpoint=$(az cosmosdb show --name $cosmosdbAccountName --resource-group $resourceGroupName --query "documentEndpoint" -o tsv)
 storageAccountKey=$(az storage account keys list --account-name $storageAccountName --resource-group $resourceGroupName --query "[0].value" -o tsv)
 storageAccountConnectionString=$(az storage account show-connection-string --name $storageAccountName --resource-group $resourceGroupName --query connectionString -o tsv)
 documentIntelligenceEndpoint=$(az cognitiveservices account show --name $documentIntelligenceName --resource-group $resourceGroupName --query "properties.endpoints.FormRecognizer" -o tsv)
@@ -76,12 +77,12 @@ echo "Storing the keys and properties in '.env' file..."
 echo "STORAGE_ACCOUNT_NAME=\"$storageAccountName\"" >> ../.env
 echo "STORAGE_KEY=\"$storageAccountKey\"" >> ../.env
 echo "STORAGE_CONNECTION_STRING=\"$storageAccountConnectionString\"" >> ../.env
-echo "COSMOS_ACCOUNT_NAME=\"$cosmosdbAccountName\"" >> ../.env
+echo "COSMOS_ENDPOINT=\"$cosmosdbEndpoint\"" >> ../.env
 echo "COSMOS_KEY=\"$cosmosdbAccountKey\"" >> ../.env
 echo "DOC_AI_ENDPOINT=\"$documentIntelligenceEndpoint\"" >> ../.env
 echo "DOC_AI_KEY=\"$documentIntelligenceKey\"" >> ../.env
-echo "OPENAI_ENDPOINT=\"$aiCognitiveServicesEndpoint\"" >> ../.env
-echo "OPENAI_KEY=\"$aiCognitiveServicesKey\"" >> ../.env
+echo "AZURE_OPENAI_ENDPOINT=\"$aiCognitiveServicesEndpoint\"" >> ../.env
+echo "AZURE_OPENAI_KEY=\"$aiCognitiveServicesKey\"" >> ../.env
 echo "SEARCH_SERVICE_NAME=\"$searchServiceName\"" >> ../.env
 echo "SEARCH_ADMIN_KEY=\"$searchServiceKey\"" >> ../.env
 
