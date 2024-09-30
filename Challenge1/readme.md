@@ -31,13 +31,15 @@ An [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/commo
 
 
 ## Resource Deployment Guide
-Clicking on button bellow will redirect you to the Azure portal to deploy the resources using the [ARM template](iac) provided in this repository.
+The first step on this hackathon will be to create the resources we will use throughout the day. Clicking on button bellow will redirect you to the Azure portal to deploy the resources using the [ARM template](iac) provided in this repository.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fdoc-process-hack%2Fmain%2FChallenge1%2Fiac%2Fazuredeploy.json)
 
 Resource deployment can take up to 5 minutes. Once the deployment is complete, you will see the resources in your Azure portal.
 
 In the meantime, you can proceed with the next step - opening pre-configured development environment in GitHub Codespaces.
+
+## Development Enviornment
 
 GitHub Codespaces is a cloud-based development environment that allows you to code from anywhere. It provides a fully configured environment that can be launched directly from any GitHub repository, saving you from lengthy setup times. You can access Codespaces from your browser, Visual Studio Code, or the GitHub CLI, making it easy to work from virtually any device.
 
@@ -47,11 +49,12 @@ To open this repository in GitHub Codespaces, click on the button below:
 
 ## Verify your resources' creation
 
-Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 5 resources and look like this:
+Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 9 resources and look like this:
 
-![image](https://github.com/user-attachments/assets/91215492-faaf-4696-aa5c-2b955fb2f7d5)
+![image](https://github.com/user-attachments/assets/e04298dd-a601-47a2-8fda-bd0cac19f313)
 
-After deploying the resources, you will need to configure the environment variables in the `.env` file. The `.env` file is a configuration file that contains the environment variables for the application. The `.env` file is automatically created runnig following command within terminal in your Codespace:
+
+After deploying the resources, you will need to configure the environment variables in the `.env` file. The `.env` file is a configuration file that contains the environment variables for the application. The `.env` file is automatically created running the following command within the terminal in your Codespace:
 
 ```bash
 cd Challenge1
