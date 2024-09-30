@@ -7,7 +7,7 @@
 # Login to Azure
 if [ -z "$(az account show)" ]; then
   echo "User not signed in Azure. Signin to Azure using 'az login' command."
-  az login
+  az login --use-device-code
 fi
 
 # Get the resource group name from the script parameter named resource-group
