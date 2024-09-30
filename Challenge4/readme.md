@@ -43,8 +43,10 @@ To start the Azure Function, navigate to the `az-function` folder run the follow
 
 NOTE: Azure Functions Core Tools requires Python 3.9 to 3.11. Python 3.12 is not supported.
 
+The CodeSpaces environment should have all the required packages installed. So creating a python virtual environment is optional.
+
 ```bash
-# Create a virtual environment using VS Code
+# OPTIONAL - Create a virtual environment using VS Code
 # 1. Open the command palette (Ctrl + Shift + P)
 # 2. Type Python: Create Virtual Environment
 # 3. Select Venv
