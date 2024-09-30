@@ -30,7 +30,9 @@
 				"ms-python.autopep8",
 				"benjaminbenais.copilot-theme",
 				"Azurite.azurite",
-				"ms-azuretools.vscode-azurestorage"
+				"ms-azuretools.vscode-azurestorage",
+				"ms-azuretools.vscode-bicep",
+				"ms-vscode.azure-account"
 			],
 			"settings": {
 				"workbench.colorTheme": "Copilot Theme"	

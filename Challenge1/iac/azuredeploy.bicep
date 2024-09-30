@@ -180,6 +180,12 @@ resource functionApp 'Microsoft.Web/sites@2022-09-01' = {
   }
 }   
 
+var umiName = '${functionAppName}-umi'
+resource functionUmi 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
+  name: umiName
+  location: 'westeurope' //Region that allows federated creds for deployment
+}
+
 /* 
   Create Azure OpenAI Cognitive Services
 */
