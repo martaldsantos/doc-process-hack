@@ -64,6 +64,16 @@ cd Challenge4/az-function
 func host start
 ```
 
+Ensure the folder structure is as follows in the Azure Storage Account:
+
+```bash
+data/loanagreements
+data/loanforms
+data/paystubs
+```
+
+Upload the sample data files to the respective containers in the Azure Storage Account.
+
 You should now see the Azure Function running locally and processing the data files as they are uploaded to the containers in the Azure Storage Account.
 
 ## Resource Deployment Guide

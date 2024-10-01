@@ -8,7 +8,7 @@ from model_loanagreements import model_loanagreements
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@app.blob_trigger(arg_name="myblob", path="loanagreements",
+@app.blob_trigger(arg_name="myblob", path="data/loanagreements/{name}",
                                connection="STORAGE_CONNECTION_STRING")
 @app.cosmos_db_output(arg_name="outputDocument",
                       database_name="ContosoDB",
@@ -23,7 +23,7 @@ def ProcessLoanAgreements(myblob: func.InputStream, outputDocument: func.Out[fun
     myblob (func.InputStream): The input blob stream.
     outputDocument (func.Out[func.Document]): The output document for Cosmos DB.
     """
-    container_name = 'loanagreements'
+    container_name = 'data/loanagreements'
     blob_service_client = get_blob_service_client()
 
     # Extract file name and root from the blob name
@@ -51,7 +51,7 @@ def ProcessLoanAgreements(myblob: func.InputStream, outputDocument: func.Out[fun
     # Save the analysis results
     save_analysis_results(blob_service_client, container_name, file_root, analysis_results)
 
-@app.blob_trigger(arg_name="myblob", path="loanforms",
+@app.blob_trigger(arg_name="myblob", path="data/loanforms/{name}",
                                connection="STORAGE_CONNECTION_STRING") 
 @app.cosmos_db_output(arg_name="outputDocument",
                       database_name="ContosoDB",
@@ -66,7 +66,7 @@ def ProcessLoanForms(myblob: func.InputStream, outputDocument: func.Out[func.Doc
     myblob (func.InputStream): The input blob stream.
     outputDocument (func.Out[func.Document]): The output document for Cosmos DB.
     """
-    container_name = 'loanforms'
+    container_name = 'data/loanforms'
     blob_service_client = get_blob_service_client()
     
     # Extract file name and root from the blob name
@@ -94,7 +94,7 @@ def ProcessLoanForms(myblob: func.InputStream, outputDocument: func.Out[func.Doc
     # Save the analysis results
     save_analysis_results(blob_service_client, container_name, file_root, analysis_results)
 
-@app.blob_trigger(arg_name="myblob", path="paystubs",
+@app.blob_trigger(arg_name="myblob", path="data/paystubs/{name}",
                                connection="STORAGE_CONNECTION_STRING")
 @app.cosmos_db_output(arg_name="outputDocument",
                       database_name="ContosoDB",
@@ -109,7 +109,7 @@ def ProcessPayStubs(myblob: func.InputStream, outputDocument: func.Out[func.Docu
     myblob (func.InputStream): The input blob stream.
     outputDocument (func.Out[func.Document]): The output document for Cosmos DB.
     """
-    container_name = 'paystubs'
+    container_name = 'data/paystubs'
     blob_service_client = get_blob_service_client()
     
     # Extract file name and root from the blob name
