@@ -38,7 +38,7 @@ To successfully complete this hackathon, you will need the following:
 
 1. GitHub account to access the repository and run [GitHub Codespaces](https://github.com/features/codespaces)
 2. Familiarity with Python programming, including handling JSON data and making API calls.
-3. An active **Azure subscription** 
+3. An active **Azure subscription**, with **Owner** or **Contributor** rights
 4. Ability to provision the following resources in **Sweden Central**: 
 - Azure Cosmos DB
 - Azure Document Intelligence
@@ -51,7 +51,12 @@ To successfully complete this hackathon, you will need the following:
 - Azure Storage Account
 - Event Grid System Topic
 
-In order for this provision to happen, you should be either the **Owner or Contributor in an active Azure Subscription**. 
+## Hackathon Format: Challenge-Based
+This hackathon adopts a challenge-based format, offering you a unique opportunity to learn while dealing with practical problems. Each challenge includes one or more self-contained tasks designed to test and enhance your skills in specific aspects of AI app development. You will approach these challenges by:
+- Analyzing the problem statement.
+- Strategizing your approach to find the most effective solution.
+- Leveraging the provided lab environment and Azure AI services.
+- Collaborating with peers to refine and implement your solutions.
 
 ## Challenges
 1. Challenge 01: **[Hack Essentials: Crafting Services for Seamless Execution](Challenge1/readme.md)**
