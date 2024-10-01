@@ -59,13 +59,13 @@ This hackathon adopts a challenge-based format, offering you a unique opportunit
 - Collaborating with peers to refine and implement your solutions.
 
 ## Challenges
-1. Challenge 01: **[Hack Essentials: Crafting Services for Seamless Execution](Challenge1/readme.md)**
+1. Challenge 01: **[Deployment of Resources in Azure](Challenge1/readme.md)**
    - Creation of the Services necessary to conduct this Hack
-2. Challenge 02: **[InsightExtractor: Leveraging Azure Document Intelligence for Data Retrieval](Challenge2/readme.md)**
+2. Challenge 02: **[Leveraging Azure Document Intelligence for Data Retrieval](Challenge2/readme.md)**
    - Use Azure Document Intelligence Model to retrieve information from Text and Tables
-3. Challenge 03: **[Data Modelling: From Retrieval to Upload](Challenge3/data_modelling.ipynb)**
+3. Challenge 03: **[Data Modelling and Structuring with Python and Cosmos DB](Challenge3/data_modelling.ipynb)**
    - Structuring the Retrieved Data and Upload it to a Cosmos DB
-4. Challenge 04: **[AutoFlow: Streamlining Processes with Azure Functions](Challenge4/readme.md)**
+4. Challenge 04: **[Streamlining the Process with Azure Functions](Challenge4/readme.md)**
    - Creation of a Function App that will Automate these Processes
 5. Challenge 05: **[Set up CI/CD for Azure Function](Challenge5/readme.md)**
    - Creation of the CI/CD pipeline to automate the run of the Azure Function 
