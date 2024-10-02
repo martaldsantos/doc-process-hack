@@ -13,7 +13,7 @@
       "type": "string",
       "defaultValue": "swedencentral",
       "allowedValues": [
-        "swedencentral"
+        "swedencentral", "westeurope"
       ],
       "metadata": {
         "description": "Azure location where resources should be deployed (e.g., swedencentral)"
