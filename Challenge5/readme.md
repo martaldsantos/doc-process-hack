@@ -35,12 +35,3 @@ env:
 
 Push some test changes to the repository and check the GitHub Actions tab to see the workflow running.
 
-## Time for Testing! 
-
-Great! Now that we've put in all the work, let's roll the ball! 
-
-1. Download the files that are inside the `Data` folder inside this Challenge. As the name entails, you have 3 different types of documents, and you will need to upload it into the right folder.
-2. In your `Azure Portal` open the Azure Function App and on your right hand side you can see an `Invocation` button and open the `Logs` tab. 
-3. In another tab, go back to your `Storage Account` and upload your files to their respective folders.
-4. Now move back to the `Logs` tab inside your Function App and watch the magic happen. Give it some time to process all the information.
-5. Last, and especially, not least, open in another tab your Azure Cosmos DB account, a check if your data is being added to the Database.
