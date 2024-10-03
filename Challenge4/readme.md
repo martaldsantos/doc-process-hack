@@ -98,3 +98,25 @@ az login
 az account set --subscription <subscription_id_where_function_exists>
 func azure functionapp publish <function_app_name> --publish-local-settings
 ```
+
+## Testing your function locally
+
+If you don't have the function running, navigate to the function folder and start it again:
+
+```bash
+# Navigate to the az-function folder
+cd Challenge4/az-function
+
+# Start the Azure Function
+func host start
+```
+
+You should see a message such as this:
+
+![alt text](image.png)
+
+If no other errors were prompted, this means your function is ready to be triggered. So now, let's add some files to trigger our function. Inside this very folder you will find a folder called `testing-data` that contains 3 files too be added to the specific container inside the Storage Account. Therefore, let's open two tabs:
+- `Storage Account`: where the data is inputed
+- `Cosmos DB`: where the data will be outputed
+
+And now, spend the next few minutes processing the testing data and check how it is loaded into the Cosmos DB.
