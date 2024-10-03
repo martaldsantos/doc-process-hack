@@ -35,3 +35,5 @@ env:
 
 Push some test changes to the repository and check the GitHub Actions tab to see the workflow running.
 
+## Conclusion
+In this challenge, you learned how to set up Continuous Integration and Continuous Deployment (CI/CD) for an Azure Function using GitHub Actions. You navigated through the Azure Portal to validate environment variables and configured the deployment center to connect with GitHub. You authorized the connection, selected the appropriate repository and branch, and added a workflow using a user-assigned identity for authentication. By following these steps, you created a GitHub Action workflow file that triggers on every push to your repository, automating the build and deployment of your Azure Function. Additionally, you ensured that the necessary secrets were added to your repository for seamless authentication during deployment.
