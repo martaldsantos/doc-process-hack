@@ -120,3 +120,6 @@ If no other errors were prompted, this means your function is ready to be trigge
 - `Cosmos DB`: where the data will be outputed
 
 And now, spend the next few minutes processing the testing data and check how it is loaded into the Cosmos DB.
+
+## Conclusion
+In this challenge, you learned how to create and deploy an Azure Function using Python to automate the processing of various data files. You set up the necessary resources in Azure, including the Azure Function, and configured the development environment. You also learned how to run the Azure Function locally using the Azure Functions Core Tools and how to deploy it to Azure using both VS Code and the Azure CLI. Additionally, you explored how to structure your data in the Azure Storage Account and tested the function to ensure it processes data files correctly. 
