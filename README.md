@@ -74,8 +74,5 @@ Each challenge comes with its own set of tasks and objectives. Feel free to expl
 
 Happy hacking! 
 
-
-## Contributors
-- Joao Gonçalves
-- Marta Santos
-- Tomas Szabo
+# License
+This repository is licensed under MIT license. More info can be found [here](https://github.com/Microsoft/WhatTheHack/blob/master/LICENSE).
