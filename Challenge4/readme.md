@@ -121,6 +121,12 @@ If no other errors were prompted, this means your function is ready to be trigge
 
 And now, spend the next few minutes processing the testing data and check how it is loaded into the Cosmos DB.
 
+## Create web application for document upload (optional)
+
+Create a web application that allows users to upload documents to the Azure Blob Storage. The web application should have a form that allows users to select the document type and upload the document. The uploaded document should be stored in the Azure Blob Storage in the respective container based on the document type.
+
+**NOTE:** This challenge is optional. If you want to learn more about developing web applications, you can follow the [documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python) and create a web application that allows users to upload documents to the Azure Blob Storage. Hint - You can also leverage the help of [GitHub Copilot](https://copilot.github.com/) or [Microsoft Copilot](https://copilot.microsoft.com) to generate the required source code and you can use the challenge description above as a prompt for GitHub Copilot and tune it if necessary.
+
 ## Extend Azure Function to process new document type (optional)
 
 Add new document type created in [Challenge3](../Challenge3/readme.md) to the Azure Function. You can use the existing code as a reference and add required source code to automatically process new documents.
