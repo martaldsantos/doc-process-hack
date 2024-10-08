@@ -121,5 +121,11 @@ If no other errors were prompted, this means your function is ready to be trigge
 
 And now, spend the next few minutes processing the testing data and check how it is loaded into the Cosmos DB.
 
+## Extend Azure Function to process new document type (optional)
+
+Add new document type created in [Challenge3](../Challenge3/readme.md) to the Azure Function. You can use the existing code as a reference and add required source code to automatically process new documents.
+
+**NOTE:** This challenge is optional. If you want to learn more about developing Azure Functions, you can follow the [documentation](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv5&pivots=programming-language-python) and add required source code to [az-function/function_app.py](az-function/function_app.py) to process new document types. Inspiration could be also how existing document types are processed within Azure Function.
+
 ## Conclusion
 In this challenge, you learned how to create and deploy an Azure Function using Python to automate the processing of various data files. You set up the necessary resources in Azure, including the Azure Function, and configured the development environment. You also learned how to run the Azure Function locally using the Azure Functions Core Tools and how to deploy it to Azure using both VS Code and the Azure CLI. Additionally, you explored how to structure your data in the Azure Storage Account and tested the function to ensure it processes data files correctly. 

@@ -35,6 +35,8 @@ The first step on this hackathon will be to create the resources we will use thr
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fdoc-process-hack%2Fmain%2FChallenge1%2Fiac%2Fazuredeploy.json)
 
+**NOTE:** Deployment may fail if the resource provider `Microsoft.AlertsManagement` is not registered in your subscription. Follow the [documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider-1) to register it and the re-run the deployment.
+
 Resource deployment can take up to 5 minutes. Once the deployment is complete, you will see the resources in your Azure portal.
 
 In the meantime, you can proceed with the next step - opening pre-configured development environment in GitHub Codespaces.
