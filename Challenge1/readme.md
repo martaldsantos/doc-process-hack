@@ -35,7 +35,7 @@ The first step on this hackathon will be to create the resources we will use thr
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmartaldsantos%2Fdoc-process-hack%2Fmain%2FChallenge1%2Fiac%2Fazuredeploy.json)
 
-**NOTE:** Deployment may fail if the resource provider `Microsoft.AlertsManagement` is not registered in your subscription. Follow the [documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider-1) to register it and the re-run the deployment.
+**NOTE:** Deployment may fail if the resource provider `Microsoft.AlertsManagement` is not registered in your. Follow the [documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider-1) to register it and the re-run the deployment.
 
 Resource deployment can take up to 5 minutes. Once the deployment is complete, you will see the resources in your Azure portal.
 
@@ -47,14 +47,15 @@ GitHub Codespaces is a cloud-based development environment that allows you to co
 
 To open this repository in GitHub Codespaces, click on the button below:
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/martaldsantos/doc-process-hack/tree/ts)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/martaldsantos/doc-process-hack/tree/main)
+
+**NOTE:** If GitHub Codespaces is not enabled in your organization, you can enable it by following the instructions [here](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-or-disabling-github-codespaces-for-your-organization), or, if you cannot change your GitHub organization's settings, create free personal GitHub account [here](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
 
 ## Verify your resources' creation
 
 Go back to your `Azure Portal` and find your `Resource Group`that should by now contain 9 resources and look like this:
 
 ![image](https://github.com/user-attachments/assets/e04298dd-a601-47a2-8fda-bd0cac19f313)
-
 
 After deploying the resources, you will need to configure the environment variables in the `.env` file. The `.env` file is a configuration file that contains the environment variables for the application. The `.env` file is automatically created running the following command within the terminal in your Codespace:
 
