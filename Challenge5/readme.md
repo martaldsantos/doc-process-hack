@@ -10,13 +10,13 @@ By completing this challenge, you will have a fully automated deployment process
 
 1. Navigate to the Azure Portal and open the Azure Function App created in Challenge 1.
 2. Validate that all the necessary Environment variables are set in the Azure Function App. They should be the same as the ones set in the local.settings.json file, which we uploaded to the Azure Function App in Challenge 4.
-2. Click on the deployment center and select the source control option, in our case it should be GitHub.
-3. Authorize the connection between Azure and GitHub.
-4. Select the repository and branch that contains the Azure Function code. (should be your Fork and the branch you're currently using)
-5. Select Add a workflow.
-6. Select User-assigned identity as the authentication method.
-7. Select the User-assigned identity created in Challenge 1.
-8. Preview the file, close and click Save.
+3. Click on the deployment center and select the source control option, in our case it should be GitHub.
+4. Authorize the connection between Azure and GitHub.
+5. Select the repository and branch that contains the Azure Function code. (should be your Fork and the branch you're currently using)
+6. Select Add a workflow.
+7. Select User-assigned identity as the authentication method.
+8. Select the User-assigned identity created in Challenge 1.
+9. Preview the file, close and click Save.
 
 At this point, you should have a GitHub Action workflow file in your repository. This file will be triggered every time you push changes to your repository. The workflow will build and deploy the Azure Function to the Azure Function App.
 
@@ -26,7 +26,10 @@ You should have as well the necessary secrets added to your repository automatic
 
 Now before you push any new changes to the repository to trigger the workflow, you need to update the GH YAML file with the path to the Azure Function code. By default, the path is set to the repository root which is not our case.
 
+**Note: At this stage you should have the GH Action workflow YAML file in your repository in the `.github/workflows` folder.**
+
 Update the `AZURE_FUNCTIONAPP_PACKAGE_PATH` variable in the YAML file with the path to the Azure Function code in your repository which should be `Challenge4/az-function`.
+
 ```yaml
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root

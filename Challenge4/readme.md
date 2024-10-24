@@ -18,6 +18,8 @@ You will deploy the required resources in Azure, including the Azure Function, a
 
 The `local.settings.json` file is a configuration file that contains the environment variables for the application. Create a `local.settings.json` in the `az-function` folder and replace the values below with the endpoints/keys generated in Challenge 1.
 
+**Note: For development and testing purposes `AzureWebJobsStorage` and `STORAGE_CONNECTION_STRING` should use the same same Azure Storage connection string. In a production scenario this should be separate storage accounts.**
+
 ```json
 {
   "IsEncrypted": false,
