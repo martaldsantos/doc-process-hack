@@ -99,6 +99,7 @@ var functionHostingPlanName = '${prefix}-function-asp-${suffix}'
 var functionAppName = '${prefix}-function-${suffix}'
 var functionLogAnalyticsWorkspaceName = '${prefix}-loganalytics-${suffix}'
 var functionApplicationInsightsName = '${prefix}-appinsights-${suffix}'
+var functionAppIdentityName = '${prefix}-function-identity-${suffix}'
 
 resource functionLogAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
   name: functionLogAnalyticsWorkspaceName
@@ -140,9 +141,6 @@ resource functionApp 'Microsoft.Web/sites@2022-09-01' = {
   name: functionAppName
   location: location
   kind: 'functionapp'
-  identity: {
-    type: 'SystemAssigned'
-  }
   properties: {
     serverFarmId: functionHostingPlan.id
     siteConfig: {
@@ -185,7 +183,24 @@ resource functionApp 'Microsoft.Web/sites@2022-09-01' = {
     
     httpsOnly: true
   }
-}   
+}  
+
+resource functionAppIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2022-01-31-preview' = {
+  name: functionAppIdentityName
+  location: 'northeurope' // Managed Identity must be created in a region that supports creating federated identity credentials
+}
+
+var websiteContributorRoleDefinitionId = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'de139f84-1756-47ae-9be6-808fbbe84772')
+
+resource functionAppRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  name: guid(functionApp.id, functionAppIdentity.id, websiteContributorRoleDefinitionId)
+  scope: functionApp
+  properties: {
+    roleDefinitionId: websiteContributorRoleDefinitionId
+    principalId: functionAppIdentity.properties.principalId
+    principalType: 'ServicePrincipal'
+  }
+}
 
 /* 
   Create Azure OpenAI Cognitive Services

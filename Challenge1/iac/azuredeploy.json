@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.30.23.60470",
-      "templateHash": "13251199073864179811"
+      "version": "0.31.34.60546",
+      "templateHash": "14054312371104080777"
     }
   },
   "parameters": {
@@ -52,6 +52,8 @@
     "functionAppName": "[format('{0}-function-{1}', variables('prefix'), variables('suffix'))]",
     "functionLogAnalyticsWorkspaceName": "[format('{0}-loganalytics-{1}', variables('prefix'), variables('suffix'))]",
     "functionApplicationInsightsName": "[format('{0}-appinsights-{1}', variables('prefix'), variables('suffix'))]",
+    "functionAppIdentityName": "[format('{0}-function-identity-{1}', variables('prefix'), variables('suffix'))]",
+    "websiteContributorRoleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'de139f84-1756-47ae-9be6-808fbbe84772')]",
     "aiCognitiveServicesName": "[format('{0}-aiservices-{1}', variables('prefix'), variables('suffix'))]",
     "documentIntelligenceName": "[format('{0}-di-{1}', variables('prefix'), variables('suffix'))]",
     "searchServiceName": "[format('{0}-search-{1}', variables('prefix'), variables('suffix'))]"
@@ -172,9 +174,6 @@
       "name": "[variables('functionAppName')]",
       "location": "[parameters('location')]",
       "kind": "functionapp",
-      "identity": {
-        "type": "SystemAssigned"
-      },
       "properties": {
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]",
         "siteConfig": {
@@ -220,6 +219,27 @@
         "[resourceId('Microsoft.Insights/components', variables('functionApplicationInsightsName'))]",
         "[resourceId('Microsoft.Web/serverfarms', variables('functionHostingPlanName'))]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+      "apiVersion": "2022-01-31-preview",
+      "name": "[variables('functionAppIdentityName')]",
+      "location": "northeurope"
+    },
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2022-04-01",
+      "scope": "[format('Microsoft.Web/sites/{0}', variables('functionAppName'))]",
+      "name": "[guid(resourceId('Microsoft.Web/sites', variables('functionAppName')), resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('functionAppIdentityName')), variables('websiteContributorRoleDefinitionId'))]",
+      "properties": {
+        "roleDefinitionId": "[variables('websiteContributorRoleDefinitionId')]",
+        "principalId": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('functionAppIdentityName')), '2022-01-31-preview').principalId]",
+        "principalType": "ServicePrincipal"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]",
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('functionAppIdentityName'))]"
       ]
     },
     {
