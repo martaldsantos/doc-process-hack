@@ -32,7 +32,7 @@ The `local.settings.json` file is a configuration file that contains the environ
     "COSMOS_CONNECTION_STRING" : "",
     "AZURE_OPENAI_ENDPOINT" : "",
     "AZURE_OPENAI_KEY" : "",
-    "AZURE_OPENAI_MODEL" : ""
+    "AZURE_OPENAI_MODEL" : "gpt-4o"
   }
 }
 ```
