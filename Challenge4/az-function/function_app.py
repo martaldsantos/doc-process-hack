@@ -66,7 +66,7 @@ def ProcessLoanForms(myblob: func.InputStream, outputDocument: func.Out[func.Doc
     myblob (func.InputStream): The input blob stream.
     outputDocument (func.Out[func.Document]): The output document for Cosmos DB.
     """
-    container_name = 'data/loanforms'
+    container_name = 'data/loanform'
     blob_service_client = get_blob_service_client()
     
     # Extract file name and root from the blob name
